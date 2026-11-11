@@ -35,6 +35,7 @@ The section files are copy-compatible with the paper's `\appendix`: each starts 
 |---|---|---|---|
 | 2026-11-11 | paper → repo | Appendices A–D copied verbatim (`semantic-3d-keypoint.tex` lines 573–1188). Two references into the paper replaced by words: `Section~\ref{sec:protocol}` in A, `Table~\ref{tab:levels}` in B. | Overleaf git `cd1a036` |
 | 2026-11-11 | paper | Appendices removed from the paper. Body pointers now read "Supplement A–D" and cite this repository (`\bibitem{supplement}`). | local, not yet on Overleaf |
+| 2026-11-11 | both | Headings switched to title case in the paper and in Sections A–D here, to match the venue. | local, not yet on Overleaf |
 
 ## Provenance
 
