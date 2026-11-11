@@ -34,6 +34,7 @@ The section files are copy-compatible with the paper's `\appendix`: each starts 
 | Date | Direction | What | Paper version |
 |---|---|---|---|
 | 2026-11-11 | paper → repo | Appendices A–D copied verbatim (`semantic-3d-keypoint.tex` lines 573–1188). Two references into the paper replaced by words: `Section~\ref{sec:protocol}` in A, `Table~\ref{tab:levels}` in B. | Overleaf git `cd1a036` |
+| 2026-11-11 | paper | Appendices removed from the paper. Body pointers now read "Supplement A–D" and cite this repository (`\bibitem{supplement}`). | local, not yet on Overleaf |
 
 ## Provenance
 
@@ -41,4 +42,6 @@ Section B and the query list in Section A were generated from the review registe
 
 ## Licence
 
-Not chosen yet.
+The material in this repository (`supplement.tex`, `sections/`, `supplement.pdf`) is licensed under [CC BY 4.0](LICENSE). `llncs.cls` is Springer's LNCS document class, included only to build the PDF; it is not covered by this licence.
+
+The paper itself is not in this repository; its copyright is governed by the publisher's agreement.
