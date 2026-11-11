@@ -1,0 +1,178 @@
+\section{Search queries}\label{app:queries}
+
+All 158 topic queries are listed below in the syntax of arXiv, verbatim and in the order of the register (identifiers P1.01 to P4.22). The same query was translated for OpenAlex, Semantic Scholar and Europe PMC; the translations, the search day (3 November 2026), the number of hits per query and database, and the exact date of each source are in the deposit described in the methodology section of the paper and in the PRESS review file.
+
+\subsubsection{Pass 1: distance or angle between objects named in words (50 queries).}
+{\footnotesize\raggedright\emergencystretch=3em\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item[\texttt{P1.01}] \texttt{abs:"spatial reasoning" AND abs:metric AND (abs:distance OR abs:size) AND (abs:"vision-language" OR abs:"vision language" OR abs:multimodal)}
+\item[\texttt{P1.02}] \texttt{ti:"quantitative spatial"}
+\item[\texttt{P1.03}] \texttt{abs:"metric distance" AND (abs:"vision-language model" OR abs:"vision language model" OR abs:VLM)}
+\item[\texttt{P1.04}] \texttt{abs:"absolute distance" AND (abs:"vision-language" OR abs:"vision language" OR abs:MLLM)}
+\item[\texttt{P1.05}] \texttt{abs:"spatial measuring" OR ti:"spatial measurement" OR abs:"metric spatial reasoning"}
+\item[\texttt{P1.06}] \texttt{ti:"measure anything" OR (abs:"dimensional measurement" AND abs:"segment anything")}
+\item[\texttt{P1.07}] \texttt{abs:"object size" AND abs:"single image" AND abs:metric AND abs:estimation}
+\item[\texttt{P1.08}] \texttt{ti:"single view metrology" OR ti:"single-view metrology"}
+\item[\texttt{P1.09}] \texttt{abs:"Gaussian Splatting" AND (abs:"question answering" OR abs:"large language model" OR abs:"vision-language model")}
+\item[\texttt{P1.10}] \texttt{abs:"Gaussian Splatting" AND abs:"spatial reasoning"}
+\item[\texttt{P1.11}] \texttt{abs:"3D scene graph" AND abs:"open-vocabulary"}
+\item[\texttt{P1.12}] \texttt{abs:"3D visual grounding" AND abs:"zero-shot" AND (abs:LLM OR abs:"language model")}
+\item[\texttt{P1.13}] \texttt{ti:"3D question answering" OR ti:"3D-QA" OR abs:"situated question answering"}
+\item[\texttt{P1.14}] \texttt{abs:"point cloud" AND abs:"large language model" AND abs:"spatial relation"}
+\item[\texttt{P1.15}] \texttt{abs:"VSI-Bench"}
+\item[\texttt{P1.16}] \texttt{abs:SpatialRGPT OR abs:SpatialVLM}
+\item[\texttt{P1.17}] \texttt{abs:depth AND (abs:"vision-language" OR abs:"vision language") AND abs:metric AND abs:"spatial understanding"}
+\item[\texttt{P1.18}] \texttt{abs:"human-object" AND abs:3D AND abs:scene AND abs:reconstruction AND (abs:metric OR abs:"absolute scale")}
+\item[\texttt{P1.19}] \texttt{abs:ergonomic AND (abs:"vision-language" OR abs:"vision language" OR abs:"large language model" OR abs:multimodal)}
+\item[\texttt{P1.20}] \texttt{abs:ergonomic AND abs:"computer vision" AND (abs:workstation OR abs:office OR abs:"sitting posture")}
+\item[\texttt{P1.21}] \texttt{abs:"object orientation" AND abs:estimation AND (abs:"open-world" OR abs:"zero-shot" OR abs:"in the wild")}
+\item[\texttt{P1.22}] \texttt{abs:"tool-augmented" AND abs:spatial}
+\item[\texttt{P1.23}] \texttt{ti:spatial AND ti:benchmark AND (abs:"vision-language" OR abs:multimodal) AND (abs:distance OR abs:metric)}
+\item[\texttt{P1.24}] \texttt{abs:"multi-view" AND abs:"spatial reasoning" AND (abs:"vision-language" OR abs:multimodal)}
+\item[\texttt{P1.25}] \texttt{abs:egocentric AND abs:"spatial reasoning" AND abs:metric}
+\item[\texttt{P1.26}] \texttt{abs:"structured" AND abs:indoor AND abs:"language model" AND abs:layout AND abs:"point cloud"}
+\item[\texttt{P1.27}] \texttt{abs:"vision-language" AND abs:"metric depth" AND (abs:pointing OR abs:"point prompt" OR abs:prompt)}
+\item[\texttt{P1.28}] \texttt{abs:"scene graph" AND abs:"spatial relations" AND abs:metric AND (abs:LLM OR abs:"language model")}
+\item[\texttt{P1.29}] \texttt{abs:"3D spatial reasoning" AND (abs:explicit OR abs:interpretable OR abs:"chain-of-thought")}
+\item[\texttt{P1.30}] \texttt{abs:"spatial intelligence" AND abs:benchmark}
+\item[\texttt{P1.31}] \texttt{abs:"3D grounding" AND abs:"spatial reasoning" AND (abs:"vision-language" OR abs:multimodal)}
+\item[\texttt{P1.32}] \texttt{ti:metrology AND (abs:image OR abs:camera) AND abs:deep}
+\item[\texttt{P1.33}] \texttt{abs:"referring" AND abs:spatial AND abs:depth AND abs:robot AND (abs:"vision-language" OR abs:multimodal)}
+\item[\texttt{P1.34}] \texttt{abs:"distance estimation" AND abs:"reference object" AND (abs:"vision-language" OR abs:image)}
+\item[\texttt{P1.35}] \texttt{abs:"cognitive map" AND (abs:"vision-language" OR abs:multimodal) AND abs:spatial}
+\item[\texttt{P1.36}] \texttt{abs:"Gaussian" AND abs:"open-vocabulary" AND abs:"scene understanding" AND abs:language AND abs:3D}
+\item[\texttt{P1.37}] \texttt{abs:anthropometric AND abs:measurement AND abs:image AND abs:3D}
+\item[\texttt{P1.38}] \texttt{abs:"augmented reality" AND abs:measurement AND abs:accuracy AND (abs:ARCore OR abs:ARKit OR abs:smartphone)}
+\item[\texttt{P1.39}] \texttt{abs:"spatial relation" AND abs:"3D" AND abs:"vision-language" AND (abs:angle OR abs:orientation OR abs:direction)}
+\item[\texttt{P1.40}] \texttt{abs:"relative pose" AND abs:objects AND (abs:"vision-language" OR abs:"language model") AND abs:3D}
+\item[\texttt{P1.41}] \texttt{abs:"sitting posture" AND (abs:monitor OR abs:desk OR abs:screen) AND (abs:distance OR abs:angle)}
+\item[\texttt{P1.42}] \texttt{abs:"joint angle" AND abs:ergonomic AND (abs:"pose estimation" OR abs:"computer vision") AND (abs:RULA OR abs:REBA OR abs:ROSA)}
+\item[\texttt{P1.43}] \texttt{abs:"camera space" AND abs:"human mesh" AND abs:metric AND abs:absolute}
+\item[\texttt{P1.44}] \texttt{abs:"human-scene" AND abs:interaction AND abs:reconstruction AND abs:"single image" AND abs:scene}
+\item[\texttt{P1.45}] \texttt{abs:"spatial reasoning" AND abs:"3D" AND abs:"vision-language" AND abs:"world coordinate"}
+\item[\texttt{P1.46}] \texttt{abs:"visual grounding" AND abs:"spatial" AND abs:"metric" AND abs:robot AND abs:3D}
+\item[\texttt{P1.47}] \texttt{abs:"depth" AND abs:"segment anything" AND abs:measurement AND (abs:dimension OR abs:length OR abs:width)}
+\item[\texttt{P1.48}] \texttt{abs:"room layout" AND abs:"vision-language" AND abs:metric}
+\item[\texttt{P1.49}] \texttt{abs:"spatial" AND abs:"reinforcement learning" AND abs:"vision-language" AND abs:distance AND abs:metric}
+\item[\texttt{P1.50}] \texttt{abs:"survey" AND abs:"spatial reasoning" AND (abs:"vision-language" OR abs:multimodal)}
+\end{itemize}}
+
+\subsubsection{Pass 2: locating a named point on an object (52 queries).}
+{\footnotesize\raggedright\emergencystretch=3em\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item[\texttt{P2.01}] \texttt{abs:"category-agnostic pose estimation"}
+\item[\texttt{P2.02}] \texttt{abs:"category-agnostic" AND abs:keypoint AND abs:"few-shot"}
+\item[\texttt{P2.03}] \texttt{abs:"few-shot keypoint detection"}
+\item[\texttt{P2.04}] \texttt{abs:"open-vocabulary keypoint"}
+\item[\texttt{P2.05}] \texttt{abs:keypoint AND abs:detection AND abs:"any category"}
+\item[\texttt{P2.06}] \texttt{abs:"MP-100"}
+\item[\texttt{P2.07}] \texttt{abs:"semantic correspondence" AND (abs:diffusion OR abs:DINO OR abs:DINOv2)}
+\item[\texttt{P2.08}] \texttt{abs:"semantic correspondence" AND abs:"zero-shot"}
+\item[\texttt{P2.09}] \texttt{abs:"keypoint transfer"}
+\item[\texttt{P2.10}] \texttt{abs:"SPair-71k"}
+\item[\texttt{P2.11}] \texttt{abs:"semantic correspondence" AND (abs:geometry OR abs:symmetric OR abs:"3D-aware")}
+\item[\texttt{P2.12}] \texttt{abs:"descriptor field" AND (abs:3D OR abs:robot OR abs:manipulation)}
+\item[\texttt{P2.13}] \texttt{abs:"distilled feature field"}
+\item[\texttt{P2.14}] \texttt{abs:"3D semantic correspondence"}
+\item[\texttt{P2.15}] \texttt{abs:"3D keypoint" AND (abs:"few-shot" OR abs:"zero-shot")}
+\item[\texttt{P2.16}] \texttt{abs:"semantic keypoints" AND abs:3D AND (abs:shape OR abs:"point cloud" OR abs:mesh)}
+\item[\texttt{P2.17}] \texttt{abs:keypoint AND abs:"vision-language model" AND (abs:select OR abs:proposal OR abs:candidate)}
+\item[\texttt{P2.18}] \texttt{abs:keypoint AND abs:"visual prompting"}
+\item[\texttt{P2.19}] \texttt{abs:"keypoint constraints"}
+\item[\texttt{P2.20}] \texttt{abs:"keypoint abstraction"}
+\item[\texttt{P2.21}] \texttt{abs:"canonical surface mapping"}
+\item[\texttt{P2.22}] \texttt{abs:"continuous surface embeddings"}
+\item[\texttt{P2.23}] \texttt{abs:"normalized object coordinate space" AND abs:"category-level"}
+\item[\texttt{P2.24}] \texttt{abs:"dense correspondence" AND abs:template AND abs:"category-level"}
+\item[\texttt{P2.25}] \texttt{abs:"line segment detection" AND (abs:deep OR abs:learned OR abs:neural)}
+\item[\texttt{P2.26}] \texttt{abs:"wireframe parsing"}
+\item[\texttt{P2.27}] \texttt{abs:"3D line" AND (abs:mapping OR abs:reconstruction) AND abs:"multi-view"}
+\item[\texttt{P2.28}] \texttt{abs:"piecewise planar" AND abs:"single image"}
+\item[\texttt{P2.29}] \texttt{abs:"planar reconstruction" AND (abs:Gaussian OR abs:posed OR abs:video)}
+\item[\texttt{P2.30}] \texttt{abs:"tracking any point"}
+\item[\texttt{P2.31}] \texttt{abs:"point tracking" AND abs:long-term AND abs:video}
+\item[\texttt{P2.32}] \texttt{abs:"one-shot" AND abs:"part segmentation"}
+\item[\texttt{P2.33}] \texttt{abs:"few-shot" AND abs:"part segmentation" AND (abs:diffusion OR abs:DINO OR abs:foundation)}
+\item[\texttt{P2.34}] \texttt{abs:pointing AND (abs:"vision-language" OR abs:VLM OR abs:multimodal) AND (abs:pixel OR abs:precise OR abs:accurate)}
+\item[\texttt{P2.35}] \texttt{abs:keypoint AND abs:measurement AND (abs:dimension OR abs:length OR abs:size) AND abs:image}
+\item[\texttt{P2.36}] \texttt{abs:furniture AND abs:keypoint}
+\item[\texttt{P2.37}] \texttt{abs:chair AND abs:keypoints}
+\item[\texttt{P2.38}] \texttt{abs:"dense visual descriptors"}
+\item[\texttt{P2.39}] \texttt{abs:"diffusion features" AND abs:correspondence}
+\item[\texttt{P2.40}] \texttt{abs:"category-level" AND abs:keypoint AND abs:"pose" AND abs:"self-supervised"}
+\item[\texttt{P2.41}] \texttt{abs:keypoint AND abs:"multi-view" AND abs:consistent AND (abs:triangulat* OR abs:3D)}
+\item[\texttt{P2.42}] \texttt{abs:"monocular 3D object detection" AND abs:indoor AND (abs:open OR abs:omni OR abs:"in the wild")}
+\item[\texttt{P2.43}] \texttt{abs:keypoint AND abs:"Gaussian Splatting" AND abs:semantic}
+\item[\texttt{P2.44}] \texttt{abs:"part-level" AND abs:grounding AND (abs:point OR abs:keypoint)}
+\item[\texttt{P2.45}] \texttt{abs:"single view metrology" OR abs:"single-view metrology"}
+\item[\texttt{P2.46}] \texttt{abs:"surface" AND abs:"embedding" AND abs:"template" AND abs:"dense" AND abs:object}
+\item[\texttt{P2.47}] \texttt{abs:"keypoint" AND abs:"foundation model" AND abs:"zero-shot" AND abs:"category"}
+\item[\texttt{P2.48}] \texttt{abs:"keypoint" AND abs:"text" AND abs:"prompt" AND abs:"pose" AND abs:"arbitrary"}
+\item[\texttt{P2.49}] \texttt{abs:"human" AND abs:"arbitrary points" AND abs:"body surface" AND abs:3D}
+\item[\texttt{P2.50}] \texttt{abs:"edge detection" AND abs:"furniture"}
+\item[\texttt{P2.51}] \texttt{abs:"corner" AND abs:"detection" AND abs:"planar" AND abs:"indoor"}
+\item[\texttt{P2.52}] \texttt{abs:"cuboid" AND abs:"indoor" AND abs:"single image" AND abs:"3D"}
+\end{itemize}}
+
+\subsubsection{Pass 3: the 3D position of a point given by a phrase or an example image (34 queries).}
+{\footnotesize\raggedright\emergencystretch=3em\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item[\texttt{P3.01}] \texttt{abs:"spatial referring" AND abs:3D}
+\item[\texttt{P3.02}] \texttt{abs:"spatial referring" AND (abs:depth OR abs:metric)}
+\item[\texttt{P3.03}] \texttt{abs:pointing AND abs:"vision-language" AND abs:3D AND (abs:depth OR abs:metric)}
+\item[\texttt{P3.04}] \texttt{abs:"3D pointing"}
+\item[\texttt{P3.05}] \texttt{abs:"spatial trace" OR abs:"spatial tracing"}
+\item[\texttt{P3.06}] \texttt{abs:"metric depth" AND abs:"vision-language model" AND abs:point}
+\item[\texttt{P3.07}] \texttt{abs:"3D-aware" AND (abs:VLM OR abs:"vision-language") AND (abs:point OR abs:pointing OR abs:keypoint)}
+\item[\texttt{P3.08}] \texttt{abs:embodied AND abs:"spatial reasoning" AND abs:3D AND abs:pointing}
+\item[\texttt{P3.09}] \texttt{abs:"absolute depth" AND abs:"vision-language"}
+\item[\texttt{P3.10}] \texttt{abs:"3D grounding" AND abs:monocular AND (abs:VLM OR abs:"vision-language")}
+\item[\texttt{P3.11}] \texttt{abs:"3D keypoint" AND (abs:"open-vocabulary" OR abs:language)}
+\item[\texttt{P3.12}] \texttt{abs:"3D keypoint" AND abs:"single image" AND (abs:"category-agnostic" OR abs:"any object" OR abs:"zero-shot")}
+\item[\texttt{P3.13}] \texttt{abs:affordance AND abs:3D AND abs:point AND (abs:VLM OR abs:"vision-language") AND abs:RGB}
+\item[\texttt{P3.14}] \texttt{abs:"contact point" AND abs:"vision-language" AND abs:3D}
+\item[\texttt{P3.15}] \texttt{abs:keypoint AND abs:"vision-language" AND abs:3D AND abs:monocular}
+\item[\texttt{P3.16}] \texttt{abs:"depth tokens" AND (abs:point OR abs:pointing OR abs:spatial)}
+\item[\texttt{P3.17}] \texttt{abs:"semantic correspondence" AND abs:3D AND abs:"single image"}
+\item[\texttt{P3.18}] \texttt{abs:"reference image" AND abs:keypoint AND abs:3D}
+\item[\texttt{P3.19}] \texttt{abs:"one-shot" AND abs:keypoint AND abs:3D AND abs:RGB}
+\item[\texttt{P3.20}] \texttt{abs:"visual prompt" AND abs:3D AND abs:point AND abs:depth}
+\item[\texttt{P3.21}] \texttt{abs:"spatial understanding" AND abs:metric AND abs:point AND (abs:VLM OR abs:"vision-language")}
+\item[\texttt{P3.22}] \texttt{abs:robot AND abs:pointing AND abs:3D AND abs:RGB AND abs:language}
+\item[\texttt{P3.23}] \texttt{abs:monocular AND abs:"3D localization" AND abs:language}
+\item[\texttt{P3.24}] \texttt{abs:spatial AND (abs:VLM OR abs:"vision-language") AND abs:"3D coordinates"}
+\item[\texttt{P3.25}] \texttt{abs:"marked point" AND abs:depth}
+\item[\texttt{P3.26}] \texttt{abs:pixel AND abs:"metric depth" AND abs:"vision-language"}
+\item[\texttt{P3.27}] \texttt{abs:"embodied brain" AND (abs:3D OR abs:depth)}
+\item[\texttt{P3.28}] \texttt{abs:"depth-aware" AND (abs:coordinate OR abs:coordinates OR abs:tokens) AND (abs:VLM OR abs:"vision-language" OR abs:embodied)}
+\item[\texttt{P3.29}] \texttt{abs:embodied AND abs:"foundation model" AND abs:"spatial reasoning" AND (abs:3D OR abs:depth)}
+\item[\texttt{P3.30}] \texttt{abs:"3D grounding" AND (abs:"vision-language" OR abs:VLM OR abs:multimodal) AND (abs:RGB OR abs:image OR abs:monocular)}
+\item[\texttt{P3.31}] \texttt{abs:"embodied pointing" OR (abs:pointing AND abs:embodied AND abs:"vision-language")}
+\item[\texttt{P3.32}] \texttt{abs:trace AND abs:3D AND (abs:VLM OR abs:"vision-language") AND (abs:keypoint OR abs:point)}
+\item[\texttt{P3.33}] \texttt{abs:"3D localization" AND (abs:VLM OR abs:"vision-language" OR abs:multimodal) AND abs:text}
+\item[\texttt{P3.34}] \texttt{abs:"spatial reasoning" AND abs:"3D-aware" AND (abs:VLM OR abs:"vision-language")}
+\end{itemize}}
+
+\subsubsection{Pass 4: vocabulary from the fourth pass (outputs rather than words) (22 queries).}
+{\footnotesize\raggedright\emergencystretch=3em\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\item[\texttt{P4.01}] \texttt{abs:"3D waypoints" OR abs:"3D waypoint"}
+\item[\texttt{P4.02}] \texttt{abs:waypoints AND (abs:"vision-language" OR abs:VLM) AND (abs:depth OR abs:3D OR abs:metric)}
+\item[\texttt{P4.03}] \texttt{abs:"monocular 3D" AND (abs:referring OR abs:"referring expression" OR abs:"referring expressions")}
+\item[\texttt{P4.04}] \texttt{abs:"monocular 3D visual grounding" OR abs:"monocular 3D grounding"}
+\item[\texttt{P4.05}] \texttt{abs:"3D visual grounding" AND (abs:monocular OR abs:"single image" OR abs:"single RGB" OR abs:"RGB image")}
+\item[\texttt{P4.06}] \texttt{abs:"region tokens" AND (abs:3D OR abs:depth OR abs:spatial)}
+\item[\texttt{P4.07}] \texttt{abs:"embodied localization" OR abs:"embodied localisation"}
+\item[\texttt{P4.08}] \texttt{abs:"3D referring" AND (abs:image OR abs:RGB OR abs:monocular)}
+\item[\texttt{P4.09}] \texttt{abs:"3D bounding box" AND (abs:"vision-language model" OR abs:VLM OR abs:"multimodal large language model") AND (abs:"single image" OR abs:monocular OR abs:RGB)}
+\item[\texttt{P4.10}] \texttt{abs:"camera coordinates" AND (abs:VLM OR abs:"vision-language" OR abs:"multimodal large language") AND (abs:point OR abs:location OR abs:grounding)}
+\item[\texttt{P4.11}] \texttt{abs:"metric 3D" AND (abs:VLM OR abs:"vision-language" OR abs:multimodal) AND (abs:grounding OR abs:localization OR abs:referring OR abs:point)}
+\item[\texttt{P4.12}] \texttt{abs:"embodied reasoning" AND (abs:depth OR abs:3D) AND (abs:point OR abs:grounding OR abs:trajectory)}
+\item[\texttt{P4.13}] \texttt{abs:"spatial intelligence" AND (abs:VLM OR abs:"vision-language" OR abs:multimodal) AND (abs:3D OR abs:depth) AND (abs:point OR abs:grounding OR abs:localization)}
+\item[\texttt{P4.14}] \texttt{abs:"depth estimation" AND abs:"vision-language model" AND (abs:grounding OR abs:referring OR abs:pointing)}
+\item[\texttt{P4.15}] \texttt{abs:"object-centric" AND abs:3D AND (abs:VLM OR abs:"vision-language") AND (abs:"single image" OR abs:monocular)}
+\item[\texttt{P4.16}] \texttt{abs:"visual grounding" AND abs:depth AND (abs:"vision-language" OR abs:VLM OR abs:MLLM) AND abs:3D}
+\item[\texttt{P4.17}] \texttt{abs:manipulation AND (abs:"3D point" OR abs:"3D points" OR abs:"3D position" OR abs:"3D positions") AND (abs:"vision-language" OR abs:VLM OR abs:VLMs OR abs:"language model")}
+\item[\texttt{P4.18}] \texttt{abs:navigation AND abs:waypoints AND (abs:"vision-language model" OR abs:VLM) AND (abs:RGB OR abs:egocentric)}
+\item[\texttt{P4.19}] \texttt{(abs:"grasp point" OR abs:"grasp points" OR abs:"grasping point" OR abs:"grasping points") AND (abs:"vision-language" OR abs:VLM OR abs:VLMs OR abs:language)}
+\item[\texttt{P4.20}] \texttt{abs:"spatial VLM" OR abs:"spatial-aware vision-language" OR abs:"spatially-aware vision-language"}
+\item[\texttt{P4.21}] \texttt{abs:embodied AND (abs:"multimodal large language model" OR abs:MLLM) AND (abs:3D OR abs:depth) AND (abs:point OR abs:coordinates)}
+\item[\texttt{P4.22}] \texttt{abs:"depth prediction" AND abs:"language model" AND (abs:grounding OR abs:referring OR abs:keypoint OR abs:point)}
+\end{itemize}}
+

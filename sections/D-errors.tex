@@ -1,0 +1,61 @@
+\section{Errors on the synthetic testbed}\label{app:errors}
+Median and 90th percentile of the 3D error over named points visible in the first
+photo, median over occluded points, coverage (share of points returned at all), and the
+median error of two ergonomic measurements: for people the elbow angle and the trunk
+flexion (degrees), for furniture the desk width and the eye-to-screen distance (cm).
+Configurations with several photos use the phone's motion tracking with 0.5\,cm and
+0.2$^\circ$ of pose error per photo. ``True 2D'' replaces the first stage by the exact
+pixels, which isolates the geometry. Robust triangulation leaves out the photos whose
+answer disagrees with the others, and DINOv2 rows mark the points on example photos of
+another desk or of the same one.
+
+{\scriptsize\hyphenpenalty=10000\exhyphenpenalty=10000
+\begin{tabular}{@{}p{6.3cm}rrrrrr@{}}
+\toprule
+Configuration & Median & P90 & Occluded & Coverage & Meas.\,1 & Meas.\,2 \\
+\midrule
+\multicolumn{7}{l}{\emph{People (body points)}}\\
+MediaPipe heavy, 1 photo & 39.5 & 67.9 & 30.0 & 36\% & 11.1 & 9.6 \\
+NLF-S, 1 photo & 11.3 & 20.0 & 11.1 & 83\% & 4.8 & 3.3 \\
+NLF-L, 1 photo & 10.8 & 18.0 & 11.3 & 83\% & 2.4 & 1.6 \\
+TAIHRI-4B, 1 photo & 10.6 & 24.8 & 7.3 & 21\% & 6.9 & -- \\
+SAM 3D Body, 1 photo (true person box) & 11.3 & 16.7 & 14.6 & 100\% & 8.9 & 3.2 \\
+NLF-S, 1 photo (true person box) & 11.5 & 19.6 & 10.5 & 100\% & 5.1 & 4.9 \\
+NLF-S, 5 photos fused & 8.4 & 14.9 & 9.0 & 100\% & 6.7 & 5.1 \\
+MediaPipe 2D + triangulation, 5 photos & 9.7 & 39.1 & 11.2 & 43\% & 4.8 & 2.6 \\
+NLF-S 2D + triangulation, 5 photos & 3.2 & 13.9 & 2.9 & 100\% & 9.7 & 3.1 \\
+NLF-S 2D + robust triangulation, 5 photos & 2.6 & 12.4 & 2.7 & 100\% & 9.7 & 3.1 \\
+NLF-S 2D + triangulation, 2 photos 90 deg & 2.0 & 4.7 & 2.6 & 83\% & 7.7 & 0.3 \\
+SAM 3D Body 2D + triangulation, 5 photos (true person box) & 1.8 & 10.1 & 4.2 & 100\% & 12.0 & 4.5 \\
+NLF-S 2D + triangulation, 5 photos (true person box) & 3.7 & 18.0 & 3.4 & 100\% & 12.6 & 6.0 \\
+Qwen3-VL-2B 2D + triangulation, 5 photos & 13.1 & 37.3 & 19.7 & 94\% & 47.0 & 23.9 \\
+Molmo2-4B 2D + triangulation, 5 photos & 6.8 & 10.8 & 9.0 & 58\% & 8.9 & 18.2 \\
+Moondream 2 2D + triangulation, 5 photos & 23.4 & 47.2 & 18.6 & 39\% & 25.2 & 16.1 \\
+true 2D + triangulation, 5 photos (geometry only) & 1.1 & 2.1 & 1.2 & 100\% & 0.1 & 0.2 \\
+\multicolumn{7}{l}{\emph{Furniture points}}\\
+Qwen3-VL-2B 2D + MoGe-2-S depth, 1 photo & 42.4 & 91.7 & 57.2 & 100\% & 27.4 & 25.5 \\
+Qwen3-VL-2B 2D + MoGe-2-L depth, 1 photo & 20.8 & 80.9 & 65.3 & 100\% & 32.9 & 2.8 \\
+Qwen3-VL-2B @640 px 2D + MoGe-2-S depth, 1 photo & 45.9 & 100.5 & 60.8 & 100\% & 44.3 & 28.8 \\
+Qwen3-VL-2B 2D + triangulation, 5 photos & 28.5 & 59.8 & 34.9 & 100\% & 26.9 & 0.8 \\
+Qwen3-VL-2B @640 px 2D + triangulation, 5 photos & 30.3 & 76.7 & 39.5 & 100\% & 32.0 & 0.8 \\
+Molmo2-4B 2D + MoGe-2-L depth, 1 photo & 15.2 & 62.2 & 44.8 & 61\% & 18.1 & -- \\
+Molmo2-4B 2D + triangulation, 5 photos & 9.5 & 57.5 & 31.2 & 69\% & 32.2 & -- \\
+MolmoPoint-8B 2D + triangulation, 5 photos & 26.3 & 93.5 & 29.3 & 83\% & 68.9 & -- \\
+Moondream 2 2D + triangulation, 5 photos & 20.5 & 83.8 & 25.5 & 60\% & 19.3 & -- \\
+Qwen3-VL-2B 2D + robust triangulation, 5 photos & 19.4 & 72.4 & 37.3 & 100\% & 38.4 & 3.6 \\
+Molmo2-4B 2D + robust triangulation, 5 photos & 8.7 & 41.1 & 23.9 & 69\% & 24.2 & -- \\
+DINOv2-S, other desk, 2D + MoGe-2-S depth, 1 photo & 45.5 & 140.5 & 50.9 & 96\% & 38.1 & -- \\
+DINOv2-S, other desk, 2D + triangulation, 5 photos & 18.6 & 51.8 & 31.3 & 96\% & 23.4 & -- \\
+DINOv2-S, other desk, 2D + robust triangulation, 5 photos & 15.5 & 51.2 & 21.2 & 96\% & 3.1 & -- \\
+DINOv2-L, other desk, 2D + robust triangulation, 5 photos & 13.6 & 45.0 & 21.9 & 96\% & 1.0 & -- \\
+DINOv2-S, same desk, 2D + triangulation, 5 photos & 9.6 & 41.7 & 25.3 & 87\% & 16.7 & -- \\
+DINOv2-S, same desk, 2D + robust triangulation, 5 photos & 5.4 & 26.3 & 16.1 & 87\% & 2.5 & -- \\
+whole assessment: NLF-S + DINOv2-S, other desk, robust triangulation, 5 photos & 15.5 & 51.2 & 21.2 & 96\% & 3.1 & 2.1 \\
+true 2D + MoGe-2-S depth, 1 photo & 35.9 & 66.5 & 46.1 & 93\% & 53.0 & 31.7 \\
+true 2D + MoGe-2-L depth, 1 photo & 6.0 & 19.8 & 63.3 & 93\% & 7.5 & 17.1 \\
+true 2D + MoGe-2-L depth + A4 scale, 1 photo & 3.4 & 25.5 & 54.4 & 95\% & 5.1 & 16.0 \\
+true 2D + desk plane from A4, 1 photo & 0.0 & 0.2 & 0.2 & 38\% & 0.1 & -- \\
+true 2D + poses from images + A4 scale, 2 photos 15 deg & 1.4 & 4.4 & 1.5 & 94\% & 0.9 & 0.0 \\
+true 2D + triangulation, 5 photos (geometry only) & 1.2 & 2.2 & 1.3 & 96\% & 0.5 & 0.2 \\
+\bottomrule
+\end{tabular}}

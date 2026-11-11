@@ -1,0 +1,349 @@
+\section{All methods of the map}\label{app:methods}
+
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{landscape}
+\begin{table}
+\caption{Methods by group and level.}\label{tab:grouplevel}
+\scriptsize
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+Group & general 3D one query & general separate stage & path only & general 2D & general reconstruction & category & Total \\
+\midrule
+VLM pointing & 2 & 3 & 4 & 58 & -- & 15 & 82 \\
+Correspondence & -- & -- & -- & 47 & 2 & 24 & 73 \\
+CAPE & -- & -- & -- & 23 & -- & 35 & 58 \\
+Category template 3D & -- & -- & -- & -- & -- & 25 & 25 \\
+Object keypoints 3D & -- & -- & -- & -- & -- & 24 & 24 \\
+Category keypoints 2D & -- & -- & -- & -- & -- & 21 & 21 \\
+Dense template & -- & -- & -- & -- & -- & 12 & 12 \\
+Hybrid & -- & 3 & 1 & 2 & 2 & -- & 8 \\
+\midrule
+Total & 2 & 6 & 5 & 130 & 4 & 156 & 303 \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+\begin{longtable}{@{}p{4.6cm}rp{2.0cm}lllllc@{}}
+\caption{All 303 methods of the map. Level: see the table of levels in the paper. Output: p = named point, p+path = point and path, path = path only. Input shows what the localisation needs at inference. Read: FT = full text, abs = abstract or model card.}\label{tab:allmethods}\\
+\toprule
+Method & Year & Group & Granularity & Pointer & Output & Input & Out.\ kind & Read \\
+\midrule
+\endfirsthead
+\toprule
+Method & Year & Group & Granularity & Pointer & Output & Input & Out.\ kind & Read \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\midrule\multicolumn{9}{@{}l}{\textbf{General, one query, 3D} (2)}\\\midrule
+RoboBrain 2.5 (2601.14352) & 2026 & VLM pointing & Point & text & 3D metric & RGB & p+path & FT \\
+SPEAR-VLM / SPEAR-1 (arXiv 2511.17411) & 2025 & VLM pointing & Point & text & 3D scale & RGB & p & FT \\
+\midrule\multicolumn{9}{@{}l}{\textbf{General, separate stage to 3D} (6)}\\\midrule
+LaserAttention (HAL 2026) & 2026 & Hybrid & Point & text & 3D metric & n/s & p & abs \\
+Point2Act (2508.03099) & 2025 & Hybrid & Point & text & 3D metric & RGB multi & p & FT \\
+ZeroDex (arXiv 2606.19340) & 2026 & Hybrid & Point & text & 3D metric & RGB multi & p & FT \\
+A0 (ICCV 2025, arXiv 2504.12636) & 2025 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+ForceFlow VLM pointing stage (arXiv 2605.11048) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+SpatialPoint (arXiv 2603.26690) & 2026 & VLM pointing & Point & text & 3D metric & RGB-D & p & FT \\
+\midrule\multicolumn{9}{@{}l}{\textbf{Path only (near miss)} (5)}\\\midrule
+MOKA (arXiv 2403.03174; RSS 2024) & 2024 & Hybrid & Point & text & 2D & RGB-D & path & FT \\
+3DWay (arXiv 2609.08224) & 2026 & VLM pointing & Point & text & 2D & RGB multi & path & FT \\
+cVLA (2507.02190) & 2025 & VLM pointing & Point & text & 3D & RGB & path & FT \\
+HAMSTER (arXiv 2502.05485) & 2025 & VLM pointing & Point & text & 2D & RGB & path & FT \\
+RoboTracer (2512.13660) & 2025 & VLM pointing & Point & text & 3D metric & RGB & path & FT \\
+\midrule\multicolumn{9}{@{}l}{\textbf{General, 2D} (130)}\\\midrule
+AlignCAPE (IROS 2025) & 2025 & CAPE & Point & template on example & 2D & RGB & p & abs \\
+CapeFormer (CVPR 2023) & 2023 & CAPE & Point & template on example & 2D & RGB & p & FT \\
+CapeLLM (2411.06869) & 2024 & CAPE & Point & text & 2D & RGB & p & FT \\
+CapeNext (2511.13102) & 2025 & CAPE & Point & text & 2D & RGB & p & FT \\
+CapeX (2406.00384) & 2024 & CAPE & Point & text & 2D & RGB & p & FT \\
+Doodle Your Keypoints, DYKp (arXiv 2507.07994; ICCV 2025) & 2025 & CAPE & Point & point on example & 2D & RGB & p & FT \\
+EdgeCape (2411.16665) & 2024 & CAPE & Point & template on example & 2D & RGB & p & FT \\
+ESCAPE (CVPR 2024) & 2024 & CAPE & Point & template on example & 2D & RGB & p & FT \\
+FMMP, Recurrent Feature Mining and Keypoint Mixup Padding (2503.21140;... & 2025 & CAPE & Point & template on example & 2D & RGB & p & FT \\
+GenCape (2605.13151; ICLR 2026) & 2026 & CAPE & Point & template on example & 2D & RGB & p & FT \\
+GKDT (2607.00752; ECCV 2026) & 2026 & CAPE & Point & text & 2D & RGB & p & FT \\
+GraphCape (2311.17891) & 2023 & CAPE & Point & template on example & 2D & RGB & p & FT \\
+MetaPoint (2403.13647; CVPR 2024) & 2024 & CAPE & Point & template on example & 2D & RGB & p & FT \\
+Multi-modal feature alignment CAPE, Li \& Liu (Computer Graphics Forum ... & 2026 & CAPE & Point & template on example & 2D & RGB & p & abs \\
+Natural language-labeled keypoint graphs / GroundingPose (Machine Visi... & 2026 & CAPE & Point & text & 2D & RGB & p & FT \\
+POMNet (arXiv 2207.10387; ECCV 2022) & 2022 & CAPE & Point & template on example & 2D & RGB & p & FT \\
+Prompt Pose Matching, PPM (ECCV 2024) & 2024 & CAPE & Point & point on example & 2D & RGB & p & FT \\
+SCAPE (2407.13483; ECCV 2024, DOI 10.1007/978-3-031-73337-6\_27) & 2024 & CAPE & Point & template on example & 2D & RGB & p & FT \\
+SDPNet (CVPR 2024) & 2024 & CAPE & Point & template on example & 2D & RGB & p & FT \\
+SIANet (ICASSP 2024) & 2024 & CAPE & Point & template on example & 2D & RGB & p & abs \\
+SuPACape (ACM MMAsia 2025) & 2025 & CAPE & Point & template on example & 2D & RGB & p & abs \\
+Text-guided dynamic structure prediction CAPE (Research Square preprin... & 2026 & CAPE & Point & text & n/s & n/s & p & abs \\
+X-Pose (arXiv 2310.08530; ECCV 2024) & 2023 & CAPE & Point & text & 2D & RGB & p & FT \\
+3D-guided cycle consistency network (arXiv 1604.05383) & 2016 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+3D-SC (2605.30093) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+AnchorNet (arXiv 1704.04749) & 2017 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+AnchorNet and probabilistic-introspection features, Novotny DPhil thes... & 2018 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+ASIC (2303.16201; ICCV 2023) & 2023 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+CACT, Local-to-Global Cost Aggregation (TCSVT 2022) & 2022 & Correspondence & Point & point on example & 2D & RGB & p & abs \\
+CATs++ (arXiv 2202.06817) & 2022 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Cycle-Consistency Hierarchical Dense Semantic Correspondence (ICIP 201... & 2018 & Correspondence & Point, dense & point on example & 2D & RGB & p & abs \\
+Deep Functional Maps feature consensus (arXiv 2403.12038) & 2024 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Deep ViT Features / DINO-ViT binned descriptors (2112.05814) & 2021 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Dense Semantic Correspondence where Every Pixel is a Classifier, exemp... & 2015 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+DHPF, Dynamic Hyperpixel Flow (arXiv 2007.10587; ECCV 2020) & 2020 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Diffusion Hyperfeatures (2305.14334) & 2023 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Diffusion Trajectory Modeling, DTM (2609.15357) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+DIFT (arXiv 2306.03881; NeurIPS 2023) & 2023 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+DINOv3 (2508.10104) & 2025 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+DistillDIFT (arXiv 2412.03512; WACV 2025) & 2024 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+DiTF (arXiv 2505.18584) & 2025 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+DIY-SC (arXiv 2506.05312) & 2025 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Déjà Vu (arXiv 2611.00328) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Eye-for-an-eye (2406.07008) & 2024 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Fuse2Match (NeurIPS 2025) &  & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Gaze2Act (2605.30282) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+GeoAware-SC, Telling Left from Right (2311.17034; CVPR 2024) & 2023 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Gromov-Wasserstein OT semantic matching, Snelgar et al. (arXiv 2602.03... & 2026 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Hyperpixel Flow, HPF (1908.06537) & 2019 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+ImCorr (2609.29193) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Jamais Vu (arXiv 2506.08220; NeurIPS 2025) & 2025 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+KBCNet with KBC cropping (2404.02678) & 2024 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+LDM correspondences (arXiv 2305.15581) & 2023 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+MaCoSNet, Show, Match and Segment (1906.05857; TPAMI 2020) & 2019 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+MARCO (2604.18267) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+OHG, Object-aware Dense Semantic Correspondence (CVPR 2017) & 2017 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+PARN (arXiv 1807.02939) & 2018 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+PSCNet, Pyramidal Semantic Correspondence Networks (TPAMI 2021; prelim... & 2021 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Robo-ABC (2401.07487; ECCV 2024) & 2024 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+SAA, structure-aware aggregation (TIP 2026) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & abs \\
+SCOT, Semantic Correspondence as Optimal Transport (CVPR 2020) & 2020 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+SD+DINO, A Tale of Two Features (2305.15347; NeurIPS 2023) & 2023 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+SD4Match (2310.17569; CVPR 2024, DOI 10.1109/cvpr52733.2024.02602) & 2023 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Shape-of-You, SoY (2603.11618; CVPR 2026) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+SimBetter, GuFT + NABI (TIP 2026) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & abs \\
+SimpleMatch (2601.12357) & 2025 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Tex2Sem (TCSVT 2025) & 2025 & Correspondence & Point & point on example & 2D & RGB & p & abs \\
+VGGT semantic matching, Yang et al. (2509.21263) & 2025 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Viewpoint-Guided Spherical Maps (2312.13216; CVPR 2024) & 2023 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+WildProp (arXiv 2606.31125) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Red Circle visual prompting for CLIP (2304.06712; ICCV 2023) & 2023 & Hybrid & Point & text & 2D & RGB & p & FT \\
+VisionLLM v2 (arXiv 2406.08394) & 2024 & Hybrid & Point & text & 2D & RGB & p & FT \\
+A0 (arXiv 2504.12636; ICCV 2025), in the thesis 'Towards Robust Roboti... & 2026 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+ABot-ER (arXiv 2610.18355) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+ABot-N1 (2607.10383) & 2026 & VLM pointing & Point & text & 2D & RGB multi & p & FT \\
+ACE-Brain-0.5 (arXiv 2607.04426) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+ACE-Brain-0.6 (2610.27040) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Action-Sketcher (2601.01618) & 2026 & VLM pointing & Point & text & 2D & RGB multi & p & FT \\
+AffordanceVLA (2606.06155) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Anvil-MOPD (arXiv 2610.21882) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+CoRL (2603.14811) & 2026 & VLM pointing & Point & text & 2D & RGB multi & p & FT \\
+Cosmos-Reason2 (HF model card 2026; 2B, 8B, 32B) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+CroPond (2512.04686) & 2025 & VLM pointing & Point & text & 2D & RGB multi & p & FT \\
+Embodied-R1 (arXiv 2508.13998; ICLR 2026) & 2025 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+Embodied-R1.5 (arXiv 2606.11324) & 2026 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+Gemini 3 Pro (Google blog 2025) &  & VLM pointing & Point & text & 2D & RGB & p & abs \\
+Gemini Robotics-ER (2503.20020) & 2025 & VLM pointing & Point & text & 2D & RGB multi & p+path & FT \\
+Gemini Robotics-ER 1.5 (arXiv 2510.03342) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+GroundAnything / GroundAnything-VLM (arXiv 2609.39600) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+GroundingPI (2609.39601) & 2026 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+GTA-VLA (2605.13632) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+HY-Embodied-0.5 (arXiv 2604.07430) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Hy-Embodied-VLM-1.0 (arXiv 2607.12894) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+iFlyBot-VLM (arXiv 2511.04976) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+InternVLA-M1 (arXiv 2510.13778); same method as ST4VLA (arXiv 2602.101... & 2025 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+KptLLM (2411.01846) & 2024 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+LightNav-0 / LightNav-ER (2608.30935) & 2026 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+LLaVA-OneVision-2-8B (arXiv 2605.25979) & 2026 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+Magma (2502.13130) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+MiMo-Embodied (arXiv 2511.16518) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+MJev-Spatial (arXiv 2610.22276) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+MJev-Spatial (arXiv 2610.22276) &  & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Molmo / PixMo (2409.17146) & 2024 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Molmo2 (arXiv 2601.10611) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Molmo2-ER (2605.02881) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+MolmoPoint (2603.28069) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Moondream 2 (Hugging Face model card 2025, release 2025-06-21) & 2024 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Moondream 3.1 (HF model card 2026) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Pelican-VL 1.0 (arXiv 2511.00108) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+PIVOT (2402.07872) & 2024 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Pointing-VLA (2608.23138) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Poivre (arXiv 2509.23746) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+PokeVLM / PokeVLA (2604.20834) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Q-Synth + A2P Decoder (arXiv 2606.29267) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Qwen2.5-VL (arXiv 2502.13923) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Qwen3-VL (arXiv 2511.21631) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+ReaAct (CVPRF 2026) & 2026 & VLM pointing & Point & text & 2D & RGB & p & abs \\
+Rex-Omni (arXiv 2510.12798) & 2025 & VLM pointing & Point & text & 2D & RGB & point+box & FT \\
+RoboBrain 2.0 (2507.02029) & 2025 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+RoboMAP (2510.10912) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+RoboPIN (2606.15753) & 2026 & VLM pointing & Point & text & 2D & RGB multi & p & FT \\
+RoboPoint (2406.10721) & 2024 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+RoboRefer (2506.04308) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+RynnBrain 1.1 (2607.17977) & 2026 & VLM pointing & Point & text & 2D & RGB multi & p & FT \\
+SpatialCoT (2501.10074; RSS 2025) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Talking Points (2510.14583) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+TRACE (2511.01999) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Vesta (arXiv 2606.20905) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+ViGoRL (arXiv 2505.23678) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+WeVisOne-VL (2610.31329) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+\midrule\multicolumn{9}{@{}l}{\textbf{General, via reconstruction} (4)}\\\midrule
+Organic skeleton correspondence using part arrangements (Appl. Math. J... & 2019 & Correspondence & Point & point on example & n/s & n/s & p & abs \\
+Tango3D (2605.19727) & 2026 & Correspondence & Point & point on example & 3D & mesh/pc & p & FT \\
+BLaDA (2604.08410) & 2026 & Hybrid & Point & text & 3D & RGB multi & p & FT \\
+LERF (2303.09553) & 2023 & Hybrid & Point & text & 3D metric & RGB multi & p & FT \\
+\midrule\multicolumn{9}{@{}l}{\textbf{One category} (156)}\\\midrule
+Anthropometric face model facial feature points, Batista (ICIAR 2007) & 2007 & CAPE & Point & fixed labels & 2D & RGB & p & FT \\
+AW-HRNet (PRMVAI 2025) & 2025 & CAPE & Point & template on example & 2D & RGB & p & abs \\
+Beyond Human Skeletons, prompt-guided graph matching (ICASSP 2026) & 2026 & CAPE & Point & fixed labels & 2D & RGB & p & abs \\
+Body-part guided KIT / KITPose (ICMEW 2024; arXiv 2502.18214) & 2024 & CAPE & Point & fixed labels & 2D & RGB & p & FT \\
+Cattle weight estimation through readily photos (Eng. Appl. Artif. Int... & 2025 & CAPE & not & not stated & n/s & n/s & p & abs \\
+Cefish (SSRN 2024, 10.2139/ssrn.4989275) & 2024 & CAPE & not & not stated & n/s & n/s & p & abs \\
+Composite object detection + key point recognition for tilted shrimp (... & 2024 & CAPE & Point & not stated & n/s & n/s & p & abs \\
+DatPose (Electronics 2023) & 2023 & CAPE & Point & fixed labels & 2D & RGB & p & abs \\
+DeepProfile (Applied Sciences 2022, doi:10.3390/app12042220) & 2022 & CAPE & Point & fixed labels & 2D & RGB & p & FT \\
+D²APRNet (SSRN 2026, 10.2139/ssrn.7584702) & 2026 & CAPE & Point & fixed labels & n/s & n/s & p & abs \\
+FSKD (arXiv 2112.06183; CVPR 2022) & 2021 & CAPE & Point & point on example & 2D & RGB & p & FT \\
+Improved YOLOv8l-pose with Swin backbone for crab carapace keypoints (... & 2025 & CAPE & Point & fixed labels & 2D & RGB & p & FT \\
+KDSM (2310.05056) & 2023 & CAPE & Point & text & 2D & RGB & p & FT \\
+Keypoint R-CNN crab and lobster measurement (Iftikhar, PhD thesis, Abe... & 2026 & CAPE & Point & fixed labels & n/s & n/s & p & abs \\
+KITPose (arXiv 2502.18214) & 2025 & CAPE & Point & fixed labels & 2D & RGB & p & FT \\
+Lightweight goat keypoint network with pose-based error calibration (C... & 2026 & CAPE & Point & fixed labels & n/s & n/s & p & abs \\
+lwFSKD, Detect Any Keypoints (AAAI 2024) & 2024 & CAPE & Point & point on example & 2D & RGB & p & FT \\
+MFLD-net (arXiv 2209.05777; Aquatic Ecology 2023) & 2023 & CAPE & Point & fixed labels & 2D & RGB & p & FT \\
+MICPose (Signal Image Video Process. 2026) & 2026 & CAPE & Point & fixed labels & n/s & n/s & p & abs \\
+MT-SRNet (Computers and Electronics in Agriculture 2025) & 2025 & CAPE & Point & not stated & n/s & n/s & p & abs \\
+OpenKD (2409.19899) & 2024 & CAPE & Point & text & 2D & RGB & p & FT \\
+PAK-RCNN (IEEE Access 2026) & 2026 & CAPE & Point & fixed labels & 2D & RGB & p & abs \\
+Pashu Vision (ISJEM 2026) & 2026 & CAPE & Point & fixed labels & 2D & RGB & p & abs \\
+Probabilistic GMM + Uniform heatmap decoding for HPE (2610.14093) & 2026 & CAPE & Point & fixed labels & 2D & RGB & p & FT \\
+Repurposing GANs (CVPR 2021; extended TPAMI 2022) & 2021 & CAPE & Point & fixed labels & 2D & RGB & p & abs \\
+SalViT (2304.03140) & 2023 & CAPE & Point & point on example & 2D & RGB & p & FT \\
+Sapiens (arXiv 2408.12569) & 2024 & CAPE & Point & fixed labels & 2D & RGB & p & FT \\
+SCW-YOLO (Symmetry 2025) & 2025 & CAPE & Point & fixed labels & 2D & RGB & p & abs \\
+SD-VICL (arXiv 2508.09949, ICCV 2025) & 2025 & CAPE & Point & template on example & 2D & RGB & p & FT \\
+SEPAM\_HRNet (Applied Sciences 2023) & 2023 & CAPE & Point & fixed labels & 2D & RGB & p & abs \\
+Shape-constrained multi-resolution selected linear predictors (TPAMI 2... & 2010 & CAPE & Point & fixed labels & 2D & RGB & p & FT \\
+SuperAnimal (arXiv 2203.07436) & 2022 & CAPE & Point & fixed labels & 2D & RGB & p & FT \\
+Transformer-enhanced keypoint detection for GUM-compliant fish morphom... & 2026 & CAPE & Point & fixed labels & n/s & n/s & p & abs \\
+Vision Mamba fish pose estimation for growth morphometrics (Progress i... & 2026 & CAPE & Point & fixed labels & 2D & n/s & p & abs \\
+Weld-SDPose (Meas. Sci. Technol. 2026) & 2026 & CAPE & Point & fixed labels & 2D & RGB & p & abs \\
+Cascaded Pyramid Network (arXiv 1711.07319) & 2017 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+CID (TPAMI 2023) & 2023 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & abs \\
+CLAMP (CVPR 2023, arXiv 2206.11752) & 2022 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+ConvNet + MRF joint training (arXiv 1406.2984) & 2014 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+Convolutional Pose Machines (CVPR 2016) & 2016 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+Cross-domain adaptation for animal pose (ICCV 2019, arXiv 1908.05806) & 2019 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+DARK (arXiv 1910.06278) & 2019 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+DeepPose (CVPR 2014) & 2013 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+ED-Pose++ (TPAMI 2025) & 2025 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & abs \\
+HRFormer (NeurIPS 2021, arXiv 2110.09408) & 2021 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+HRNet (CVPR 2019, arXiv 1902.09212) & 2019 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+Integral pose regression (arXiv 1711.08229) & 2017 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+Iterative Error Feedback (arXiv 1507.06550; CVPR 2016) & 2015 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+LAB, Look at Boundary (CVPR 2018, arXiv 1805.10483) & 2018 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+RLE, Residual Log-likelihood Estimation (ICCV 2021, arXiv 2107.11291) & 2021 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+Sampling-argmax (arXiv 2110.08825) & 2021 & Category keypoints 2D & Point & fixed labels & 2D & mesh/pc & p & FT \\
+SimCC (arXiv 2107.03332) &  & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & abs \\
+TokenPose (ICCV 2021, arXiv 2104.03516) & 2021 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+Unified sequence interface (arXiv 2206.07669) & 2022 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+ViPNAS (CVPR 2021; arXiv 2105.10154) & 2021 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+ViTPose (arXiv 2204.12484) & 2022 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT \\
+3D point distribution model of fish fitted to stereo images (BMVC 1997... & 1997 & Category template 3D & Point & template on model & 3D metric & RGB multi & p & FT \\
+3D point distribution model of salmon, Tillett et al. (CVIU 2000) & 2000 & Category template 3D & Point & template on model & 3D metric & RGB multi & p & abs \\
+3D Reconstruction of Video Sign Language Dictionaries (UCU master's th... & 2020 & Category template 3D & Point & fixed labels & 2D & RGB & p & abs \\
+Camera distance-aware 3DMPPE (arXiv 1907.11346) & 2019 & Category template 3D & Point & fixed labels & 3D metric & RGB & p & FT \\
+Click-Pose (ICCV 2023) & 2023 & Category template 3D & Point & fixed labels & 2D & RGB & p & FT \\
+CMANet (2403.12440) & 2024 & Category template 3D & Point & template on model & 3D metric & RGB multi & p & FT \\
+CPO + HWC multi-camera vehicle keypoints (ROBIO 2018; arXiv 1802.03515... & 2018 & Category template 3D & Point & fixed labels & 3D metric & RGB multi & p & FT \\
+DeepLabCut (arXiv 1804.03142) & 2018 & Category template 3D & Point & fixed labels & 2D & RGB & p & FT \\
+Deformable 3D fish template + closed-form absolute 3D localization (21... & 2021 & Category template 3D & Point & template on model & 3D metric & RGB & p & FT \\
+Few-shot Geometry-Aware Keypoint Localization (arXiv 2303.17216) & 2023 & Category template 3D & Point & fixed labels & 2D & RGB & p & FT \\
+GenCeption (2607.09024) & 2026 & Category template 3D & Point & fixed labels & 3D & RGB & p & FT \\
+Generation and Ordinal Ranking, CVAE MultiPoseNet + OrdinalScore (1904... & 2019 & Category template 3D & Point & fixed labels & 3D metric & RGB & p & FT \\
+GLVD (2510.06046; NeurIPS 2025) & 2025 & Category template 3D & Point, dense & template on model & 3D scale & RGB multi & p & FT \\
+Hand motion from 3D point trajectories and a smooth surface model (ECC... & 2004 & Category template 3D & Point & template on model & 3D & RGB multi & p & abs \\
+Kinematics-based HOI reconstruction with CRRNet (2407.14043) & 2024 & Category template 3D & Point & template on model & 3D metric & RGB & p & FT \\
+Learnable Triangulation (arXiv 1905.05754) & 2019 & Category template 3D & Point & fixed labels & 3D metric & RGB multi & p & FT \\
+MeTRAbs (arXiv 2007.07227) & 2020 & Category template 3D & Point & fixed labels & 3D metric & RGB & p & FT \\
+MoCapAnything (arXiv 2512.10881) & 2025 & Category template 3D & Point & template on model & 3D scale & RGB & p & FT \\
+MOCHI (arXiv 2605.01450) & 2026 & Category template 3D & Point, dense & template on model & 3D metric & RGB multi & p & FT \\
+Monocular 3D human pose with improved CNN supervision (3DV 2017, arXiv... & 2016 & Category template 3D & Point & fixed labels & 3D metric & RGB & p & FT \\
+Neural Puppeteer, NePu (ACCV 2022) & 2023 & Category template 3D & Point & fixed labels & 3D metric & RGB multi & p & FT \\
+NLF, Neural Localizer Fields (2407.07532; NeurIPS 2024) & 2024 & Category template 3D & Point & point on model & 3D metric & RGB & p & FT \\
+QuadPose (2610.36599) & 2026 & Category template 3D & Point & fixed labels & 3D metric & RGB & p & FT \\
+S-LASSIE (Computer Animation and Virtual Worlds 2024) & 2024 & Category template 3D & Point & point on example & n/s & RGB & p & abs \\
+SAM 3D Body (2602.15989) & 2025 & Category template 3D & Point & template on model & 3D scale & RGB & p & FT \\
+ACTR (CVPR 2023) & 2023 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Bridging Viewpoint Gaps (CVPR 2025) & 2025 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+CATs, Cost Aggregation Transformers (NeurIPS 2021) & 2021 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Common3D (2504.21749; CVPR 2025) & 2025 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Dense Object Nets (arXiv 1806.08756) & 2018 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Dense visual descriptors from image augmentations (arXiv 2209.05213) & 2022 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+DIFE, Dense Interspecies Face Embedding (NeurIPS 2022) & 2022 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+DON with multi-object NT-Xent training (2206.12145) & 2022 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+D²DINO (AIROV 2026, doi:10.34749/3061-1466.2026.57) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+FeatureNeRF (arXiv 2303.12786; ICCV 2023) & 2023 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+GECO (2508.00746; ICCV 2025) & 2025 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+LPMFlow (CVPR 2024) & 2024 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+MatchMe (2311.18540; ACCV 2024) & 2023 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Multi-level contrastive semantic correspondence (2109.10967; IJCV 2022... & 2021 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Navale et al. DON training framework (TransAI 2023) & 2023 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+PMNC (CVPR 2021) & 2021 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Probabilistic introspection features (arXiv 1804.01552) & 2018 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+Promptable Animal Pose Tracking (arXiv 2608.04995) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+Self-Supervised Semantically Consistent Features via a Simple 3D Prior... & 2026 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+SemAlign3D (2503.22462; CVPR 2025) & 2025 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+SFA-DIFT (CVPR 2026) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+SpaceJAM (2407.11850; ECCV 2024) & 2024 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+TACK (arXiv 2112.04910; ICRA 2022) & 2021 & Correspondence & Point & point on example & 2D & RGB & p & FT \\
+TransforMatcher (2205.11634; CVPR 2022) & 2022 & Correspondence & Point, dense & point on example & 2D & RGB & p & FT \\
+3D Keypoint Knowledge Engine (2111.10817) & 2021 & Dense template & Point, dense & template on model & 2D & RGB & p & FT \\
+A-CSM (2004.00614) & 2020 & Dense template & Point, dense & point on model & 2D & RGB & p & FT \\
+BodyMap (arXiv 2205.09111) & 2022 & Dense template & Point, dense & template on model & 2D & RGB & p & FT \\
+Categorical Surface Embedding, self-supervised geometric correspondenc... & 2022 & Dense template & Point, dense & template on model & 2D & RGB & p & FT \\
+Continuous Surface Embeddings, CSE (2011.12438; NeurIPS 2020) & 2020 & Dense template & Point, dense & template on model & 2D & RGB & p & FT \\
+CSM (1907.10043) & 2019 & Dense template & Point, dense & point on model & 2D & RGB & p & FT \\
+DensePose (arXiv 1802.00434) & 2018 & Dense template & Point, dense & template on model & 2D & RGB & p & FT \\
+DRACO (arXiv 2011.12912; ICRA 2021) & 2020 & Dense template & Point, dense & template on model & 3D scale & RGB & p & FT \\
+ESU/ISU category-level NOCS network (Signal Image Video Process. 2021) & 2021 & Dense template & Point, dense & template on model & 2D & n/s & p & abs \\
+SEMAGIC (2605.27938) & 2026 & Dense template & Point, dense & point on example & 2D & RGB & p & FT \\
+Semi-supervised Dense Keypoints (arXiv 2109.09299) & 2021 & Dense template & Point, dense & template on model & 2D & RGB & p & FT \\
+SHIC (2407.18907; ECCV 2024) & 2024 & Dense template & Point, dense & template on model & 2D & mesh/pc & p & FT \\
+3D-INN (1604.08685; ECCV 2016) & 2016 & Object keypoints 3D & Point & fixed labels & 2D & RGB & p & FT \\
+3D-MuPPET (arXiv 2308.15316) & 2023 & Object keypoints 3D & Point & fixed labels & 3D metric & RGB multi & p & FT \\
+6-DoF Object Pose from Semantic Keypoints (arXiv 1703.04670) & 2017 & Object keypoints 3D & Point & fixed labels & 2D & RGB & p & FT \\
+CREStereo + MobileViT-Pose cattle body measurement (Comput. Electron. ... & 2025 & Object keypoints 3D & Point & not stated & n/s & n/s & p & abs \\
+Dual-view bolt vertex key-point model with texture refinement and sema... & 2025 & Object keypoints 3D & Point & fixed labels & 2D & RGB & p & abs \\
+FLiTrak3D (bioRxiv 2026, doi 10.64898/2026.09.07.749842) & 2026 & Object keypoints 3D & Point & fixed labels & 3D metric & RGB multi & p & FT \\
+Geometry-aware SimCC binocular notch measurement (DOI 10.1088/1361-650... & 2026 & Object keypoints 3D & Point & fixed labels & 3D metric & RGB multi & p & abs \\
+HRCSTrans + monocular vision measurement model (Eng. Appl. Artif. Inte... & 2024 & Object keypoints 3D & Point & fixed labels & 3D metric & RGB & p & FT \\
+KBMeasure / DKeyDet (Optics Express 2024) & 2024 & Object keypoints 3D & Point & fixed labels & 3D & RGB multi & p & abs \\
+Keypoint detection + posture-aware correction for dairy cattle body me... & 2026 & Object keypoints 3D & Point & not stated & n/s & n/s & p & abs \\
+KeypointNet for shoe semantic keypoints (2509.06048; Robotics and Auto... & 2025 & Object keypoints 3D & Point & fixed labels & 2D & RGB & p & FT \\
+KeyPose (arXiv 1912.02805) & 2019 & Object keypoints 3D & Point & fixed labels & 3D metric & RGB multi & p & FT \\
+KIS-GMM (2310.15059; Springer Proceedings in Advanced Robotics) & 2023 & Object keypoints 3D & Point & fixed labels & 3D metric & n/s & p & FT \\
+Object keypoints toolkit (arXiv 2201.07665) & 2022 & Object keypoints 3D & Point & fixed labels & 3D metric & RGB multi & p & FT \\
+Pupil tracking for digital puppetry (arXiv 2006.11341) & 2020 & Object keypoints 3D & Point & fixed labels & 2D & RGB & p & FT \\
+S3K (arXiv 2009.14711) & 2020 & Object keypoints 3D & Point & fixed labels & 3D metric & RGB multi & p & FT \\
+Satellite landmark regression + SA-LMPE (1908.11542) & 2019 & Object keypoints 3D & Point & fixed labels & 2D & RGB & p & FT \\
+Semantic door-handle keypoints, Wang et al. (RA-L 2020) & 2020 & Object keypoints 3D & Point & fixed labels & 3D scale & n/s & p & abs \\
+Semantic keypoint-based pose estimation (arXiv 2204.05864) & 2022 & Object keypoints 3D & Point & fixed labels & 2D & RGB & p & FT \\
+Semantic Shape and Trajectory Reconstruction (IEEE Access 2024) & 2024 & Object keypoints 3D & Point & fixed labels & 3D & RGB & p+path & abs \\
+SKP (RA-L 2022) & 2022 & Object keypoints 3D & Point & fixed labels & 3D & n/s & p & abs \\
+StarMap (1803.09331; ECCV 2018) & 2018 & Object keypoints 3D & Point & template on model & 2D & RGB & p & FT \\
+VL-MP (2503.02748) & 2025 & Object keypoints 3D & Point & fixed labels & 3D & RGB & p & FT \\
+YOLO-CSS + VLM-OR growth-relation keypoint pose estimation (Industrial... & 2026 & Object keypoints 3D & Point & fixed labels & 3D metric & n/s & p & abs \\
+CGD (CVPR 2025) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+KALIE (arXiv 2409.14066) & 2024 & VLM pointing & Point & fixed labels & 2D & RGB & p & FT \\
+LeGo-Drive (arXiv 2403.20116) & 2024 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+LLaRA (arXiv 2406.20095) & 2024 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+Loc3R-VLM (2603.18002) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+LocLLM (2406.04659; CVPR 2024) & 2024 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+PoseLLM (arXiv 2507.09139) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+RoboMamba (NeurIPS 2024; arXiv 2406.04339) & 2024 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+SC-VLA (arXiv 2405.17418) & 2024 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
+SenseNova-Vision (2607.06560) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+SPHINX (arXiv 2311.07575) & 2023 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+TAIHRI (2604.08921) & 2026 & VLM pointing & Point & text & 3D metric & RGB & p & FT \\
+UAV-CodeAgents pixel-pointing, SFT Qwen2.5-VL-7B (2505.07236) & 2025 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+Unified-IO (arXiv 2206.08916) & 2022 & VLM pointing & Point & fixed labels & 2D & RGB & p & FT \\
+ViLaM (2311.12327) & 2023 & VLM pointing & Point & text & 2D & RGB & p & FT \\
+\end{longtable}
+
+\end{landscape}}

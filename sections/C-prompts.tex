@@ -1,0 +1,25 @@
+\section{Questions to the models}\label{app:prompts}
+
+Each model gets one image and one question per point; \texttt{<phrase>} stands for the
+description of the point.
+
+\subsubsection{Type A, RoboBrain 2.5, and Qwen3-VL asked directly.}
+\begin{quote}\small
+\texttt{<phrase>}. Please provide its 3D coordinates. Your answer should be formatted as
+a list of tuples, i.e. [(x, y, d)], where x and y are the coordinates of the point in the
+image and d is the depth of the point. The x and y should be 0-1000 to indicate a point
+in the image. The unit of depth is meters. But you never output unit, just output number.
+\end{quote}
+
+\subsubsection{Type B, Qwen3-VL, Cosmos-Reason2 and MiMo-Embodied.}
+\begin{quote}\small
+The \texttt{<phrase>} is visible in the image. Locate the \texttt{<phrase>} in the
+provided image and output its position and dimensions using a 3D bounding box. The result
+must be in JSON format: \{"bbox\_3d":[x\_center, y\_center, z\_center, x\_size, y\_size,
+z\_size, roll, pitch, yaw],"label":"point"\}. Add the exact point in the image as
+"point\_2d": [x, y], with x and y 0-1000, in the same JSON object.
+\end{quote}
+The question for the box alone is the same without its first and last sentences.
+
+\subsubsection{RynnBrain 1.1.} The single-box prompt of the RynnScale benchmark, with the
+description as the target and the intrinsics matrix in its text.

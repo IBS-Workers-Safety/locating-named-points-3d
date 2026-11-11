@@ -1,0 +1,44 @@
+% Supplementary material for the paper. Built with pdfLaTeX (see README.md).
+% The section files under sections/ are kept copy-compatible with the paper:
+% a section can be moved back into the paper's \appendix verbatim, and back out.
+\documentclass{llncs}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage[varvw]{newtxmath}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage[hidelinks]{hyperref}
+
+% Working title (session 5); to be confirmed by the co-authors. Change it here only.
+\newcommand{\papertitle}{Locating Named Points in 3D from a Single RGB Image:
+A Survey with a Comparison of Open-Weight Models}
+
+\begin{document}
+\title{Supplementary Material for\\ ``\papertitle''}
+\titlerunning{Supplementary Material}
+\author{Zofia Smoleń\inst{1} \and
+Piotr Podbielski\inst{1} \and
+Maria Ganzha\inst{1,2} \and
+Marcin Paprzycki\inst{1,3}}
+\authorrunning{Z. Smoleń et al.}
+\institute{Systems Research Institute, Polish Academy of Sciences, Warsaw, Poland \and
+Warsaw University of Technology, Warsaw, Poland \and
+University of Technology and Arts in Applied Sciences in Warsaw, Warsaw, Poland\\
+\email{firstname.lastname@ibspan.waw.pl}}
+\maketitle
+
+This document holds the material that does not fit in the page limit of the paper:
+the search queries (Section~\ref{app:queries}), all methods of the map
+(Section~\ref{app:methods}), the questions given to the models
+(Section~\ref{app:prompts}) and the errors on the synthetic testbed
+(Section~\ref{app:errors}).
+
+\appendix
+\input{sections/A-queries}
+\clearpage
+\input{sections/B-methods}
+\input{sections/C-prompts}
+\input{sections/D-errors}
+
+\end{document}
