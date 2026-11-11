@@ -38,6 +38,7 @@ The section files are copy-compatible with the paper's `\appendix`: each starts 
 | 2026-11-11 | both | Headings switched to title case in the paper and in Sections A–D here, to match the venue. | local, not yet on Overleaf |
 | 2026-11-11 | both | Informal verbs for model output replaced by the field's verbs (outputs, predicts, prompted, coverage); the path-only level has no extra label ("near miss" removed); here in C (heading), D (caption text) and B ("Path only"). The prompt text in C is verbatim and unchanged. | local, not yet on Overleaf |
 | 2026-11-11 | both | "where a paper is silent" replaced in the paper by a literal sentence on "n/s"; "n/s = not stated in the paper" added to the caption of the method table here. | local, not yet on Overleaf |
+| 2026-11-11 | paper → repo | The synthetic-testbed paragraph ("We measured the body methods on a synthetic flat … close to solved …") moved from the paper's One Category section to the start of Section D, as decided in session 5; its citations became plain names. | local, not yet on Overleaf |
 
 ## Provenance
 

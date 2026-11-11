@@ -1,4 +1,7 @@
 \section{Errors on the Synthetic Testbed}\label{app:errors}
+% Moved from the paper (section The Landscape, One Category) on 2026-11-11 to fit the page limit.
+We measured the body methods on a synthetic flat with a seated person, a desk and exact ground truth, where a virtual phone takes 36 photos and three hand-held sweeps (table below). NLF (Neural Localizer Fields) places body points within 11\,cm from a single photo and, with its 2D points triangulated over five photos, within 3.2\,cm, at about 0.2\,s per photo on a phone, and SAM~3D Body is as accurate from one photo (11.3\,cm). For the body the task is close to solved, but these methods do not extend to other objects.
+
 Median and 90th percentile of the 3D error over named points visible in the first
 photo, median over occluded points, coverage (share of points with an output), and the
 median error of two ergonomic measurements: for people the elbow angle and the trunk
