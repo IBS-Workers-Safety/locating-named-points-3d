@@ -1,12 +1,11 @@
 \section{Errors on the Synthetic Testbed}\label{app:errors}
 Median and 90th percentile of the 3D error over named points visible in the first
-photo, median over occluded points, coverage (share of points returned at all), and the
+photo, median over occluded points, coverage (share of points with an output), and the
 median error of two ergonomic measurements: for people the elbow angle and the trunk
 flexion (degrees), for furniture the desk width and the eye-to-screen distance (cm).
 Configurations with several photos use the phone's motion tracking with 0.5\,cm and
 0.2$^\circ$ of pose error per photo. ``True 2D'' replaces the first stage by the exact
-pixels, which isolates the geometry. Robust triangulation leaves out the photos whose
-answer disagrees with the others, and DINOv2 rows mark the points on example photos of
+pixels, which isolates the geometry. Robust triangulation leaves out the photos whose output disagrees with the others, and DINOv2 rows mark the points on example photos of
 another desk or of the same one.
 
 {\scriptsize\hyphenpenalty=10000\exhyphenpenalty=10000
