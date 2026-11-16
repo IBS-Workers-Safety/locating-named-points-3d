@@ -1,15 +1,23 @@
 \section{Errors on the Synthetic Testbed}\label{app:errors}
-% Moved from the paper (section The Landscape, One Category) on 2026-11-11 to fit the page limit.
-We measured the body methods on a synthetic flat with a seated person, a desk and exact ground truth, where a virtual phone takes 36 photos and three hand-held sweeps (table below). NLF (Neural Localizer Fields) places body points within 11\,cm from a single photo and, with its 2D points triangulated over five photos, within 3.2\,cm, at about 0.2\,s per photo on a phone, and SAM~3D Body is as accurate from one photo (11.3\,cm). For the body the task is close to solved, but these methods do not extend to other objects.
+% Moved from the paper (section The Landscape, One Category) to fit the page limit. The paper no longer refers to this section.
+The body methods were evaluated on a synthetic flat with a seated person, a desk and an exact ground truth.
+In this flat, a virtual camera took 36 photos and three hand-held sweeps.
+From a single photo, NLF (Neural Localizer Fields) predicts body points with a median error of 11\,cm.
+With its 2D points triangulated over five photos, the median error is 3.2\,cm.
+SAM~3D Body is as accurate from one photo (11.3\,cm).
+For the body, the task is therefore close to solved.
+However, these methods do not extend to other objects.
 
-Median and 90th percentile of the 3D error over named points visible in the first
-photo, median over occluded points, coverage (share of points with an output), and the
-median error of two ergonomic measurements: for people the elbow angle and the trunk
-flexion (degrees), for furniture the desk width and the eye-to-screen distance (cm).
-Configurations with several photos use the phone's motion tracking with 0.5\,cm and
-0.2$^\circ$ of pose error per photo. ``True 2D'' replaces the first stage by the exact
-pixels, which isolates the geometry. Robust triangulation leaves out the photos whose output disagrees with the others, and DINOv2 rows mark the points on example photos of
-another desk or of the same one.
+The table below gives the 3D error in centimetres: the median and the 90th percentile over the named points visible in the first photo, and the median over the occluded points.
+Coverage is the share of points with an output.
+The last two columns give the median error of two ergonomic measurements.
+For people, these are the elbow angle and the trunk flexion, in degrees.
+For furniture, these are the desk width and the eye-to-screen distance, in centimetres.
+Configurations with several photos used simulated motion tracking, with an error of 0.5\,cm and 0.2$^\circ$ in the pose of each photo.
+``True 2D'' replaces the first stage by the exact pixels, which isolates the geometry.
+Robust triangulation leaves out the photos whose output disagrees with the others.
+In the DINOv2 rows, the points were marked on example photos of another desk, or of the same one.
+``A4'' denotes the four corners of an A4 sheet of paper on the desk, which fix the metric scale and the plane of the desk.
 
 {\scriptsize\hyphenpenalty=10000\exhyphenpenalty=10000
 \begin{tabular}{@{}p{6.3cm}rrrrrr@{}}
@@ -33,7 +41,7 @@ NLF-S 2D + triangulation, 5 photos (true person box) & 3.7 & 18.0 & 3.4 & 100\% 
 Qwen3-VL-2B 2D + triangulation, 5 photos & 13.1 & 37.3 & 19.7 & 94\% & 47.0 & 23.9 \\
 Molmo2-4B 2D + triangulation, 5 photos & 6.8 & 10.8 & 9.0 & 58\% & 8.9 & 18.2 \\
 Moondream 2 2D + triangulation, 5 photos & 23.4 & 47.2 & 18.6 & 39\% & 25.2 & 16.1 \\
-true 2D + triangulation, 5 photos (geometry only) & 1.1 & 2.1 & 1.2 & 100\% & 0.1 & 0.2 \\
+True 2D + triangulation, 5 photos (geometry only) & 1.1 & 2.1 & 1.2 & 100\% & 0.1 & 0.2 \\
 \multicolumn{7}{l}{\emph{Furniture points}}\\
 Qwen3-VL-2B 2D + MoGe-2-S depth, 1 photo & 42.4 & 91.7 & 57.2 & 100\% & 27.4 & 25.5 \\
 Qwen3-VL-2B 2D + MoGe-2-L depth, 1 photo & 20.8 & 80.9 & 65.3 & 100\% & 32.9 & 2.8 \\
@@ -52,12 +60,12 @@ DINOv2-S, other desk, 2D + robust triangulation, 5 photos & 15.5 & 51.2 & 21.2 &
 DINOv2-L, other desk, 2D + robust triangulation, 5 photos & 13.6 & 45.0 & 21.9 & 96\% & 1.0 & -- \\
 DINOv2-S, same desk, 2D + triangulation, 5 photos & 9.6 & 41.7 & 25.3 & 87\% & 16.7 & -- \\
 DINOv2-S, same desk, 2D + robust triangulation, 5 photos & 5.4 & 26.3 & 16.1 & 87\% & 2.5 & -- \\
-whole assessment: NLF-S + DINOv2-S, other desk, robust triangulation, 5 photos & 15.5 & 51.2 & 21.2 & 96\% & 3.1 & 2.1 \\
-true 2D + MoGe-2-S depth, 1 photo & 35.9 & 66.5 & 46.1 & 93\% & 53.0 & 31.7 \\
-true 2D + MoGe-2-L depth, 1 photo & 6.0 & 19.8 & 63.3 & 93\% & 7.5 & 17.1 \\
-true 2D + MoGe-2-L depth + A4 scale, 1 photo & 3.4 & 25.5 & 54.4 & 95\% & 5.1 & 16.0 \\
-true 2D + desk plane from A4, 1 photo & 0.0 & 0.2 & 0.2 & 38\% & 0.1 & -- \\
-true 2D + poses from images + A4 scale, 2 photos 15 deg & 1.4 & 4.4 & 1.5 & 94\% & 0.9 & 0.0 \\
-true 2D + triangulation, 5 photos (geometry only) & 1.2 & 2.2 & 1.3 & 96\% & 0.5 & 0.2 \\
+Whole assessment: NLF-S + DINOv2-S, other desk, robust triangulation, 5 photos & 15.5 & 51.2 & 21.2 & 96\% & 3.1 & 2.1 \\
+True 2D + MoGe-2-S depth, 1 photo & 35.9 & 66.5 & 46.1 & 93\% & 53.0 & 31.7 \\
+True 2D + MoGe-2-L depth, 1 photo & 6.0 & 19.8 & 63.3 & 93\% & 7.5 & 17.1 \\
+True 2D + MoGe-2-L depth + A4 scale, 1 photo & 3.4 & 25.5 & 54.4 & 95\% & 5.1 & 16.0 \\
+True 2D + desk plane from A4, 1 photo & 0.0 & 0.2 & 0.2 & 38\% & 0.1 & -- \\
+True 2D + poses from images + A4 scale, 2 photos 15 deg & 1.4 & 4.4 & 1.5 & 94\% & 0.9 & 0.0 \\
+True 2D + triangulation, 5 photos (geometry only) & 1.2 & 2.2 & 1.3 & 96\% & 0.5 & 0.2 \\
 \bottomrule
 \end{tabular}}

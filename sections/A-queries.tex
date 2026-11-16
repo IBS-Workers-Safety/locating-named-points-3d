@@ -1,6 +1,130 @@
 \section{Search Queries}\label{app:queries}
 
-All 158 topic queries are listed below in the syntax of arXiv, verbatim and in the order of the register (identifiers P1.01 to P4.22). The same query was translated for OpenAlex, Semantic Scholar and Europe PMC; the translations, the search day (3 November 2026), the number of hits per query and database, and the exact date of each source are in the deposit described in the methodology section of the paper and in the PRESS review file.
+All 158 topic queries are listed below in the syntax of arXiv, verbatim and in the order of the register (identifiers P1.01 to P4.22).
+Each query was translated to the syntax of OpenAlex, Semantic Scholar and Europe PMC.
+% Removed: the deposited files and the PRESS review file are not available in this repository or elsewhere yet.
+%The translations, the search day (3 November 2026), the number of hits per query and database, and the exact date of each source are in the deposited files (Search and Screening Details below) and in the PRESS review file.
+
+Figure~\ref{fig:prisma} shows the flow of records through the survey, following PRISMA~2020.
+The main counts are given in Section~3 of the paper.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{\textwidth}{!}{\begin{tikzpicture}[font=\scriptsize, x=1cm, y=1cm,
+  box/.style={draw, rounded corners=2pt, align=center, text width=5.5cm, inner sep=3pt},
+  idb/.style={box, fill=blue!10}, scr/.style={box, fill=green!10}, exc/.style={box, fill=orange!15}, inc/.style={box, fill=green!30, font=\footnotesize\bfseries},
+  ar/.style={-{Stealth[length=2mm]}, thick}]
+\node[idb] (db) at (0,0) {Records identified from databases \\ (n = 20\,350) \\ arXiv 4021, OpenAlex 10\,288, \\ Semantic Scholar 5554, Europe PMC 487};
+\node[idb] (ot) at (6.1,0) {Records identified from other methods \\ (n = 3940) \\ backward citations 2049, Hugging Face 1097, \\ forward citations 229, known to the authors 565};
+\node[idb] (uq) at (0,-2.6) {Unique records \\ (n = 15\,559)};
+\node[exc] (dp) at (6.1,-2.6) {Duplicate records removed \\ (n = 8731)};
+\node[scr] (s1) at (0,-4.6) {Records screened on title and abstract \\ (n = 15\,557; 2 without a title not screened)};
+\node[exc] (x1) at (6.1,-4.6) {Records excluded at stage 1 \\ (n = 14\,292) \\ E1 11\,288, E2 851, E3 233, E6 147, E7 815, E9 958 \\ (85 records re-checked from this group \\ were sent on to stage 2)};
+\node[scr] (sk) at (0,-7.0) {Reports sought for full-text assessment \\ (n = 1350 = 1265 + 85 from the exclusion check)};
+\node[exc] (nr) at (6.1,-7.0) {Reports not retrieved or not classifiable \\ (n = 124)};
+\node[scr] (as) at (0,-9.2) {Reports assessed for eligibility \\ (n = 1226)};
+\node[exc] (x2) at (6.1,-10.2) {Reports not included at stage 2 (n = 929) \\ \strut \\ Excluded (n = 833): \\ E1 334, E2 163, E3 39, E4 51, E5 73, E6 53, E7 21, E8 22, E9 77 \\ \strut \\ E1 not located in an image (also GUI), E2 object or part, E3 existing detector, E4 lifting only, E5 unnamed points, E6 depth, LiDAR or 3D shape input, E7 dataset, E8 points given, E9 not a method \\ \strut \\ Further reports of a method already in the register \\ (duplicates, n = 96)};
+\node[inc] (in) at (0,-11.9) {Methods included in the map \\ (n = 297)};
+\node[align=left, anchor=north west] at (-2.75,-13.2) {One category 155 (human body 50, animals 39, furniture 1, other 65); \\ any object: pixel 128, path 5, 3D with one model 2, \\ 3D with a monocular depth model 1, 3D with other input 6};
+\node[font=\footnotesize\bfseries\color{blue!50!black}, anchor=west] at (-2.75,1.35) {Identification};
+\node[font=\footnotesize\bfseries\color{blue!50!black}, anchor=west] at (-2.75,-3.6) {Screening};
+\node[font=\footnotesize\bfseries\color{blue!50!black}, anchor=west] at (-2.75,-10.6) {Included};
+\coordinate (mid) at ($(db.south)!0.55!(uq.north)$);
+\draw (ot.south) |- (mid);
+\draw[ar] (db.south) -- (uq.north);
+\draw[ar] (uq.east) -- (dp.west);
+\draw[ar] (uq.south) -- (s1.north);
+\draw[ar] (s1.east) -- (x1.west |- s1.east);
+\draw[ar] (s1.south) -- (sk.north);
+\draw[ar] (sk.east) -- (nr.west);
+\draw[ar] (sk.south) -- (as.north);
+\draw[ar] (as.east) -- (x2.west |- as.east);
+\draw[ar] (as.south) -- (in.north);
+\end{tikzpicture}
+}
+\caption{Flow of records through the survey, following PRISMA~2020. The 24\,290 records come from the databases and the other sources; 297 methods were included.}\label{fig:prisma}
+\end{figure}
+
+\subsubsection{Search and Screening Details.}
+The paragraphs below give the details that Section~3 of the paper leaves out.
+
+\emph{Design and reporting.}
+The items of PRISMA 2020 on risk of bias, effect measures, synthesis and certainty of evidence do not apply to a mapping of methods.
+The search is reported following PRISMA-S.
+% Removed: these files are not available in this repository or elsewhere yet.
+%The review plan, the instructions given to the screening models, the register and the validation files are deposited.
+
+\emph{Databases and queries.}
+OpenAlex indexes the proceedings of IEEE, ACM, Springer, Elsevier and CVF.
+Semantic Scholar added abstracts that OpenAlex lacked.
+Europe PMC covers the biomedical and ergonomics literature.
+The 158 queries ran in four passes of 50, 52, 34 and 22 queries, listed below.
+The first pass covered measuring distances and angles between objects named in words.
+The second covered locating a named point on an object.
+The third covered models that output the 3D position of a point given by a phrase or an example image.
+The fourth added vocabulary of model outputs, because the first three passes had missed whole families of recent models.
+What a model outputs is often stated only in the full text or on its card, for example as ``3D waypoints'', ``depth tokens'' or ``region tokens''.
+% Removed: no record of a PRESS review of the search strategy is available.
+%A second author reviewed the search strategy against the PRESS 2015 checklist.
+
+\emph{Other sources.}
+% The earlier table (67 records) is counted with the papers known to the authors, as in the paper: its provenance is not described. The text before:
+%Besides the databases, four other sources were used: Hugging Face model cards of selected organisations (1097 records), forward citations of five reference methods (229), papers known to the authors (498) and 67 papers from an earlier table by the authors that the databases had not retrieved.
+Besides the databases, three other sources were used: Hugging Face model cards of selected organisations (1097 records), forward citations of five reference methods (229) and papers known to the authors (565).
+References were followed backward through the Semantic Scholar API.
+The first round took the 58 included methods closest to the task, mainly vision-language pointing methods and methods that reach 3D.
+Their 3126 references gave 1601 new records.
+The second round took the 14 such methods that the first round had added.
+Their 890 references gave 448 new records, but no new method of this kind, so the backward search was stopped.
+Semantic Scholar has no reference list for 18 of these methods, mostly model cards and recent preprints.
+
+\emph{Screening.}
+Two of the 15\,559 unique records had no title and were not screened.
+At stage~1, Kimi K2.6 was queried through OpenRouter by a script.
+The provider was fixed to unquantised weights, the temperature was 0, and each record was one call with the screening instruction of the review plan verbatim.
+Stage~1 could assign only reasons decidable from an abstract.
+Reasons that depend on a method section (a lifted pixel, unnamed points, a given set of points) were left to stage~2.
+Stage~1 relies on abstracts alone, so 85 of the excluded records were assessed in full text at stage~2.
+They were the records that a first check had flagged, candidates known to the authors, and every excluded record whose abstract mentions pointing in a vision-language context.
+Eighteen of the 85 records were candidates known to the authors, among them the general vision-language models.
+Fifteen of the 85 records were included after this check.
+Most of them were general vision-language models whose abstracts mention pointing as one capability among many (Qwen3-VL, Molmo, MiMo-Embodied, HY-Embodied, LLaVA-OneVision-2, Pelican-VL, Anvil, ACE-Brain).
+Another one was SpatialPoint, whose abstract does not state that its depth map may come from an estimator.
+At stage~2, language-model agents read the method and experiment sections where an open copy existed, and each agent recorded which source it read.
+Each value of the classification is backed by a quotation or a section reference.
+The extraction form of the method table has the fields granularity, pointer, generalisability, output, input and role of the point.
+Of 1350 reports sought, 124 could not be retrieved or classified, and 1226 were assessed.
+The 124 were counted as a separate category, not as excluded.
+The second author verified 26 randomly drawn included rows without seeing the agents' decisions.
+The second author agreed with 25 decisions and with all 208 compared values.
+Thirty rows had been drawn for this check, and four of them could not be read for lack of access to the text.
+% Aligned with the paper (every method used in the backward search and a random sample of the others). The text before:
+%The first author checked 121 rows in full: every method used in the backward search, the doubtful ones and a random fifth of the rest. Six of them were changed.
+The first author checked 121 rows in full: every method used in the backward search and a random fifth of the others.
+Six of them were changed.
+% Removed: the record of the later changes to the register is not available.
+%Later changes to the register are logged one by one.
+
+\emph{Boundaries of the scope.}
+Some robotics methods do not output a point but a path, that is, a sequence of positions that the gripper of a robot should pass through to carry out an instruction such as ``wipe the table'' or ``put the cup on the shelf''.
+The path is a plan of motion, not a location of ``something in the scene'', so these methods do not locate a named point.
+They are kept in the map and counted separately, like the one-category methods.
+The reason is that the first or the last position of a path is often a named point, for example the handle to be grasped.
+The methods are not designed to predict such a point, however.
+Natively two-dimensional methods have no 3D scene.
+Models for graphical interfaces, such as Aria-UI, UGround and SeeClick, output a pixel on a screenshot, and a screenshot shows no 3D scene.
+Therefore these models were excluded.
+Datasets (E7) and papers that do not describe a method (E9) were also excluded.
+% TODO: E3 ``existing detector'' (233 records at stage 1, 39 at stage 2) is not defined here or in the paper; its definition is in the screening instruction of the review plan (ask Zofia).
+The 3D boxes of general vision-language models are a separate output, not a 3D point.
+A 3D box encloses the whole object, so it cannot distinguish points on the object.
+Section~5 of the paper therefore combines the depth of the box centre with a predicted pixel, in the route called box depth.
+
+\emph{Further limitations.}
+Some records that came from the reference lists are fragments of a bibliography (an author name, a journal, a sentence) with no abstract.
+Stage~2 excluded them as unidentifiable, and a few were excluded on the title alone.
+Each cell of the method table records what the paper states.
+Where the paper does not give a value, the cell reads ``n/s'' (not stated).
 
 \subsubsection{Pass 1: Distance or Angle between Objects Named in Words (50 Queries).}
 {\footnotesize\raggedright\emergencystretch=3em\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
@@ -150,7 +274,7 @@ All 158 topic queries are listed below in the syntax of arXiv, verbatim and in t
 \item[\texttt{P3.34}] \texttt{abs:"spatial reasoning" AND abs:"3D-aware" AND (abs:VLM OR abs:"vision-language")}
 \end{itemize}}
 
-\subsubsection{Pass 4: Vocabulary from the Fourth Pass (Outputs Rather than Words) (22 Queries).}
+\subsubsection{Pass 4: Vocabulary of Model Outputs (22 Queries).}
 {\footnotesize\raggedright\emergencystretch=3em\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
 \item[\texttt{P4.01}] \texttt{abs:"3D waypoints" OR abs:"3D waypoint"}
 \item[\texttt{P4.02}] \texttt{abs:waypoints AND (abs:"vision-language" OR abs:VLM) AND (abs:depth OR abs:3D OR abs:metric)}
