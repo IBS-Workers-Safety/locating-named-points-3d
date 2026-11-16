@@ -2,6 +2,8 @@
 
 All 158 topic queries are listed below in the syntax of arXiv, verbatim and in the order of the register (identifiers P1.01 to P4.22).
 Each query was translated to the syntax of OpenAlex, Semantic Scholar and Europe PMC.
+% Added: the translated strings are not in this repository, so the text says so instead of implying that they are listed.
+The translations are not reproduced here.
 % Removed: the deposited files and the PRESS review file are not available in this repository or elsewhere yet.
 %The translations, the search day (3 November 2026), the number of hits per query and database, and the exact date of each source are in the deposited files (Search and Screening Details below) and in the PRESS review file.
 
@@ -50,7 +52,9 @@ The paragraphs below give the details that Section~3 of the paper leaves out.
 
 \emph{Design and reporting.}
 The items of PRISMA 2020 on risk of bias, effect measures, synthesis and certainty of evidence do not apply to a mapping of methods.
-The search is reported following PRISMA-S.
+% Qualified: PRISMA-S asks for the search string of every database, and only the arXiv form is listed. The text before:
+%The search is reported following PRISMA-S.
+The search is reported following PRISMA-S, except that the queries are listed only in the syntax of arXiv.
 % Removed: these files are not available in this repository or elsewhere yet.
 %The review plan, the instructions given to the screening models, the register and the validation files are deposited.
 
@@ -92,7 +96,10 @@ Most of them were general vision-language models whose abstracts mention pointin
 Another one was SpatialPoint, whose abstract does not state that its depth map may come from an estimator.
 At stage~2, language-model agents read the method and experiment sections where an open copy existed, and each agent recorded which source it read.
 Each value of the classification is backed by a quotation or a section reference.
-The extraction form of the method table has the fields granularity, pointer, generalisability, output, input and role of the point.
+% Aligned with Table B and the paper: the check below compared 208 values on 26 rows, that is, the eight classification columns of Table B (26 x 8 = 208), not the six fields listed before. The text before:
+%The extraction form of the method table has the fields granularity, pointer, generalisability, output, input and role of the point.
+The extraction form has the eight classification columns of Table~\ref{tab:allmethods}: approach, granularity, pointer, output, input, kind of output, the part of the report that was read, and the objects.
+They give the five facets of the paper: the objects (granularity and objects), how the point is specified (pointer), the output (output and kind of output), the input, and the approach.
 Of 1350 reports sought, 124 could not be retrieved or classified, and 1226 were assessed.
 The 124 were counted as a separate category, not as excluded.
 The second author verified 26 randomly drawn included rows without seeing the agents' decisions.
