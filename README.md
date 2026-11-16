@@ -9,7 +9,7 @@ The paper is written for BDA 2026 (14th International Conference on Big Data Ana
 | A | [`sections/A-queries.tex`](sections/A-queries.tex) | The 158 topic queries (P1.01–P4.22), verbatim in arXiv syntax; the PRISMA flow diagram; details of the search, screening and checks; the discussion of paths, interface models and 3D boxes |
 | B | [`sections/B-methods.tex`](sections/B-methods.tex) | All 297 methods of the map, with the approach × output table |
 | C | [`sections/C-prompts.tex`](sections/C-prompts.tex) | The prompts given to the models, verbatim, by route |
-| D | [`sections/D-errors.tex`](sections/D-errors.tex) | Errors of the body methods on a synthetic testbed |
+| (D) | [`sections/D-errors.tex`](sections/D-errors.tex) | Errors of the body methods on a synthetic testbed; kept as a file, not part of the document, because the paper no longer refers to it |
 
 ## Building
 
@@ -57,6 +57,8 @@ The section files are copy-compatible with the paper's `\appendix`: each starts 
 | 2026-11-16 | paper → repo | New prompts in C: MiMo-Embodied for pointing and for the 3D box, in the format of its documentation, and the official path prompts of RoboBrain 2.5. | Overleaf `2275bdd` |
 | 2026-11-16 | paper → 3DSK repo | The record of the box-depth analysis is kept in the 3DSK repository (`kpstudy/paper/boxdepth`), not here; the paper points to it. | Overleaf `2275bdd` |
 | 2026-11-16 | both | Supplement cleaned against the paper (gaps in A–D, style); title, authors and pointers aligned with the paper. | Overleaf `2275bdd` |
+| 2026-11-16 | repo | A: the extraction form described by the eight classification columns of Table B; the translated queries stated as not reproduced (PRISMA-S qualified). B: BLaFA (arXiv title). Section D left out of the document (the file is kept), because the paper no longer refers to it. | Overleaf `7adde3d` |
+| 2026-11-16 | repo → Overleaf | A copy of this repository at the same commit is in the Overleaf project of the paper, folder `SUPLEMENT/` next to `BASE_Marcin_Paprzycki/`. | Overleaf `7adde3d` |
 
 ## Evaluation Code and Records
 
