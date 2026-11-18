@@ -1,6 +1,4 @@
 \section{Prompts of the Evaluation}\label{app:prompts}
-%
-% The prompts below are generated from the strings of the evaluation code (3DSK repository, branch paper-experiments, kpstudy/methods/).
 Each model was given one image and one prompt per point, with greedy decoding.
 The image and the prompt formed a single user message, without a system prompt.
 The prompts are quoted verbatim.
@@ -9,7 +7,6 @@ In them, \texttt{<phrase>} stands for the description of the point, which was th
 The limit on the number of new tokens is given with each prompt.
 
 \subsubsection{Route (a): Point Depth.}
-% Source: robobrain_point.py, constant P3 (style rb). The same string is in robobrain_path_vllm.py, constant P3.
 \begin{quote}\small\ttfamily\raggedright
 <phrase>. Please provide its 3D coordinates. Your answer should be formatted as a list of tuples, i.e. [(x, y, d)], where x and y are the coordinates of the point in the image and d is the depth of the point. The x and y should be 0-1000 to indicate a point in the image. The unit of depth is meters. But you never output unit, just output number.
 \end{quote}
@@ -20,7 +17,6 @@ The output was limited to 64 new tokens.
 In route (c), the pixel of Qwen3-VL-8B is the pixel of its response to this prompt.
 
 \subsubsection{Route (b): Pixel and 3D Box.}
-% Source: robobrain_point.py, constant PRAZEM (style razem); cosmos_vllm.py sends the same string.
 \begin{quote}\small\ttfamily\raggedright
 The <phrase> is visible in the image. Locate the <phrase> in the provided image and output its position and dimensions using a 3D bounding box. The result must be in JSON format: \{"bbox\_3d":[x\_center, y\_center, z\_center, x\_size, y\_size, z\_size, roll, pitch, yaw],\allowbreak{}"label":"point"\}. Add the exact point in the image as "point\_2d": [x, y], with x and y 0-1000, in the same JSON object.
 \end{quote}
@@ -30,7 +26,6 @@ The third number of \texttt{bbox\_3d}, \texttt{z\_center}, was read as the depth
 The output was limited to 200 new tokens.
 
 \subsubsection{Route (b): Box Alone.}
-% Source: robobrain_point.py, constant PBOX (style bbox3d).
 \begin{quote}\small\ttfamily\raggedright
 Locate the <phrase> in the provided image and output its position and dimensions using a 3D bounding box. The result must be in JSON format: \{"bbox\_3d":[x\_center, y\_center, z\_center, x\_size, y\_size, z\_size, roll, pitch, yaw],\allowbreak{}"label":"point"\}.
 \end{quote}
@@ -39,7 +34,6 @@ The first three numbers of \texttt{bbox\_3d} were read as the 3D point, in metre
 The output was limited to 128 new tokens.
 
 \subsubsection{Route (b): RynnBrain 1.1.}
-% Source: robobrain_point.py, constant PRYNN (style rynn); rynn_vllm.py sends the same string. The prompt ends with the empty think block; it is part of the string.
 \begin{quote}\small\ttfamily\raggedright
 Find the <phrase>.
 \par\smallskip
@@ -79,7 +73,6 @@ The values \texttt{cx}, \texttt{cy} and \texttt{cz} were read as the 3D point, i
 The output was limited to 300 new tokens.
 
 \subsubsection{Route (b): MiMo-Embodied.}
-% Source: mimo_vllm.py, constant P3DK (style 3dk).
 \begin{quote}\small\ttfamily\raggedright
 The <phrase> is visible in the image. Locate the <phrase> in the provided image and output its position and dimensions using a 3D bounding box. The result must be in JSON format: \{"bbox\_3d":[x\_center, y\_center, z\_center, x\_size, y\_size, z\_size, roll, pitch, yaw],\allowbreak{}"label":"point"\}. Camera intrinsics of this image, which is <W>x<H> pixels: fx=<fx>, fy=<fy>, cx=<cx>, cy=<cy> (pixels). Give the box in the camera coordinate system (x right, y down, z forward), with x\_center, y\_center, z\_center and the sizes in metres.
 \end{quote}
@@ -91,7 +84,6 @@ The model reasons before its response, and the response used is the text after t
 The output was limited to 8192 new tokens.
 
 \subsubsection{Route (c): Pointers.}
-% Source: mimo_vllm.py, constant PPT (style pt). The pointer of Qwen3-VL-8B uses the prompt of route (a), see above (kpstudy/paper/convert_route_c.py, pointer qwen3vl8b_xyd, predictions qwen3vl8b_3d).
 The pixel of Qwen3-VL-8B was taken from its response to the prompt of route (a).
 The pixel of MiMo-Embodied was taken from its response to the pointing prompt of the evaluation code of its authors:
 \begin{quote}\small\ttfamily\raggedright
@@ -103,7 +95,6 @@ The pair is given in pixels of the image resized by the model processor to sides
 The output was limited to 8192 new tokens.
 
 \subsubsection{RoboBrain 2.5: Prompts for Paths.}
-% Source: robobrain_path_vllm.py, constant PROMPTS (the six ids below); the prompt vlm3d of that file is not used.
 The authors of RoboBrain~2.5 and RoboTracer publish 3D prompts only for paths.
 The six prompts below replace the prompt of route (a), with the description in the place of the task.
 Four of them are for the path of an object, and two for the path of the end effector of a robot.
@@ -137,29 +128,3 @@ Path of the end effector, the evaluation prompts of RoboTracer (Listing 1.12, en
 Please predict 3D end-effector-centric visual trace to complete the task successfully. The task is "<phrase>". Your answer should be formatted as a list of tuples, i.e., [(x1, y1, d1), (x2, y2, d2), ...], where each tuple contains the x and y coordinates and the depth of the point.
 \end{quote}
 
-% Replaced by the prompts above, which follow the routes of the paper. The text before:
-%\section{Questions to the Models}\label{app:prompts}
-%
-%Each model was given one image and one question per point. In the prompts below,
-%\texttt{<phrase>} stands for the description of the point.
-%
-%\subsubsection{Type A, RoboBrain 2.5, and Qwen3-VL Prompted Directly.}
-%\begin{quote}\small
-%\texttt{<phrase>}. Please provide its 3D coordinates. Your answer should be formatted as
-%a list of tuples, i.e. [(x, y, d)], where x and y are the coordinates of the point in the
-%image and d is the depth of the point. The x and y should be 0-1000 to indicate a point
-%in the image. The unit of depth is meters. But you never output unit, just output number.
-%\end{quote}
-%
-%\subsubsection{Type B, Qwen3-VL, Cosmos-Reason2 and MiMo-Embodied.}
-%\begin{quote}\small
-%The \texttt{<phrase>} is visible in the image. Locate the \texttt{<phrase>} in the
-%provided image and output its position and dimensions using a 3D bounding box. The result
-%must be in JSON format: \{"bbox\_3d":[x\_center, y\_center, z\_center, x\_size, y\_size,
-%z\_size, roll, pitch, yaw],"label":"point"\}. Add the exact point in the image as
-%"point\_2d": [x, y], with x and y 0-1000, in the same JSON object.
-%\end{quote}
-%The question for the box alone is the same without its first and last sentences.
-%
-%\subsubsection{RynnBrain 1.1.} The single-box prompt of the RynnScale benchmark was used, with the
-%description as the target and the intrinsics matrix in its text.

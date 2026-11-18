@@ -54,14 +54,10 @@ SPEAR-VLM / SPEAR-1 (arXiv 2511.17411) & 2025 & VLM pointing & Point & text & 3D
 \midrule\multicolumn{10}{@{}l}{\textbf{Any object, 3D with a monocular depth model} (1)}\\\midrule
 SpatialPoint (arXiv 2603.26690) & 2026 & VLM pointing & Point & text & 3D metric & RGB & p & FT & any \\
 \midrule\multicolumn{10}{@{}l}{\textbf{Any object, 3D with other input} (6)}\\\midrule
-% Excluded under E6: the full text (HAL hal-05766960) states RGB-D input; the object masks are lifted to 3D with the sensor depth, and the point is computed from these point clouds, not located in the image.
-%LaserAttention (HAL 2026) & 2026 & Hybrid & Point & text & 3D metric & n/s & p & abs & any \\
 Point2Act (2508.03099) & 2025 & Hybrid & Point & text & 3D metric & RGB multi & p & FT & any \\
 ZeroDex (arXiv 2606.19340) & 2026 & Hybrid & Point & text & 3D metric & RGB multi & p & FT & any \\
 A0 (ICCV 2025, arXiv 2504.12636) & 2025 & VLM pointing & Point & text & 3D metric & RGB-D & p+path & FT & any \\
 ForceFlow VLM pointing stage (arXiv 2605.11048) & 2026 & VLM pointing & Point & text & 3D metric & RGB-D & p & FT & any \\
-% Excluded under E6: from its abstract, the method matches the curve skeletons of two 3D shapes and takes no image as input.
-%Organic skeleton correspondence using part arrangements (Appl. Math. J... & 2019 & Correspondence & Point & point on example & 3D & n/s & p & abs & any \\
 BLaFA (2604.08410) & 2026 & Hybrid & Point & text & 3D & RGB multi & p & FT & any \\
 LERF (2303.09553) & 2023 & Hybrid & Point & text & 3D metric & RGB multi & p & FT & any \\
 \midrule\multicolumn{10}{@{}l}{\textbf{Any object, path} (5)}\\\midrule
@@ -143,8 +139,6 @@ Viewpoint-Guided Spherical Maps (2312.13216; CVPR 2024) & 2023 & Correspondence 
 WildProp (arXiv 2606.31125) & 2026 & Correspondence & Point & point on example & 2D & RGB & p & FT & any \\
 Red Circle visual prompting for CLIP (2304.06712; ICCV 2023) & 2023 & Hybrid & Point & text & 2D & RGB & p & FT & any \\
 VisionLLM v2 (arXiv 2406.08394) & 2024 & Hybrid & Point & text & 2D & RGB & p & FT & any \\
-% Same method as A0 under ``3D with other input'' (same arXiv 2504.12636); the thesis is a further report of it, so the row is merged there.
-%A0 (arXiv 2504.12636; ICCV 2025), in the thesis 'Towards Robust Roboti... & 2026 & VLM pointing & Point & text & 2D & RGB & p+path & FT \\
 ABot-ER (arXiv 2610.18355) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT & any \\
 ABot-N1 (2607.10383) & 2026 & VLM pointing & Point & text & 2D & RGB multi & p & FT & any \\
 ACE-Brain-0.5 (arXiv 2607.04426) & 2026 & VLM pointing & Point & text & 2D & RGB & p & FT & any \\
@@ -216,8 +210,6 @@ SalViT (2304.03140) & 2023 & CAPE & Point & point on example & 2D & RGB & p & FT
 SD-VICL (arXiv 2508.09949, ICCV 2025) & 2025 & CAPE & Point & template on example & 2D & RGB & p & FT & other \\
 Anthropometric face model facial feature points, Batista (ICIAR 2007) & 2007 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT & body \\
 Body-part guided KIT / KITPose (ICMEW 2024; arXiv 2502.18214) & 2024 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT & animal \\
-% Same method as ``Body-part guided KIT / KITPose'' above (same arXiv 2502.18214), so the row is merged there.
-%KITPose (arXiv 2502.18214) & 2025 & CAPE & Point & fixed labels & 2D & RGB & p & FT \\
 Cascaded Pyramid Network (arXiv 1711.07319) & 2017 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT & body \\
 CID (TPAMI 2023; CVPR 2022 version read) & 2023 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT & body \\
 CLAMP (CVPR 2023, arXiv 2206.11752) & 2022 & Category keypoints 2D & Point & fixed labels & 2D & RGB & p & FT & animal \\
